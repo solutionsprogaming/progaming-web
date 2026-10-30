@@ -1,6 +1,6 @@
 # progamingsolutions.net
 
-Sitio web de ProGaming Solutions (ES / EN / PT) con blog. Cloudflare Pages publica la carpeta `site/` en cada push a `main`.
+Sitio web de ProGaming Solutions (ES / EN / PT) con blog. Cloudflare publica la carpeta `site/` en cada push a `main`.
 
 ## Estructura
 - `site/` — el sitio ya generado (lo que se publica). No se edita a mano.
@@ -16,4 +16,4 @@ Sitio web de ProGaming Solutions (ES / EN / PT) con blog. Cloudflare Pages publi
 2. `python3 src/build/publicar.py`
 3. `git add -A && git commit -m "Blog: <título>" && git push`
 
-Cloudflare Pages: Framework **None**, Build command vacío, Output directory **`site`**.
+Cloudflare (Workers): `wrangler.jsonc` publica solo la carpeta `site/`. Build command vacío, Deploy command `npx wrangler deploy`.

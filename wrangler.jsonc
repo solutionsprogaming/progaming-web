@@ -1,0 +1,9 @@
+// Cloudflare: publica solo la carpeta site/ como sitio estático
+{
+  "name": "progaming-web",
+  "compatibility_date": "2025-10-01",
+  "assets": {
+    "directory": "./site",
+    "html_handling": "auto-trailing-slash"
+  }
+}
