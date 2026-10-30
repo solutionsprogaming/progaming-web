@@ -37,7 +37,11 @@ SUBS={"Home":"","Plataformas":"plataformas/","Fichas-Claro":"fichas/","Api":"api
 # página -> {idioma: ruta}
 PAGES={b:{l:sub for l in LANGS} for b,sub in SUBS.items()}
 PAGES["Blog"]={l:"blog/" for l in LANGS}
+PAGES["Privacidad"]={"es":"privacidad/","en":"privacy/","pt":"privacidade/"}
 for l in LANGS: META[l]["Blog"]=BLOG_META[l]
+META["es"]["Privacidad"]=("Política de privacidad | ProGaming Solutions","Cómo ProGaming Solutions trata la información de quienes visitan su sitio y lo contactan: datos, cookies, Meta Pixel y tus derechos.")
+META["en"]["Privacidad"]=("Privacy policy | ProGaming Solutions","How ProGaming Solutions handles the information of site visitors and contacts: data, cookies, Meta Pixel and your rights.")
+META["pt"]["Privacidad"]=("Política de privacidade | ProGaming Solutions","Como a ProGaming Solutions trata as informações de quem visita o site e entra em contato: dados, cookies, Meta Pixel e seus direitos.")
 for a in ARTICLES:
     PAGES["Blog-"+a["key"]]={l:"blog/"+a[l]["slug"]+"/" for l in LANGS}
     for l in LANGS: META[l]["Blog-"+a["key"]]=(a[l]["title"]+" | ProGaming Solutions", a[l]["desc"])
@@ -53,7 +57,7 @@ for lang,(pre,hl,loc,suf) in LANGS.items():
         alts="\n".join(f'<link rel="alternate" hreflang="{LANGS[l][1]}" href="{D}{LANGS[l][0]}{subs[l]}">' for l in LANGS)+f'\n<link rel="alternate" hreflang="x-default" href="{D}{subs["es"]}">'
         ogimg=os.path.join(REPO,"src","assets","og-fichas.jpg") if b=="Fichas-Claro" else og
         ogn="og-fichas.jpg" if b=="Fichas-Claro" else "og-image.jpg"
-        cfg=dict(blobs=blobs,url=D+pre+sub,theme="#FFFFFF",assets_prefix="/assets/",site_root=R,links=links,appjs=f"app-{lang}-{b.lower()}.js",
+        cfg=dict(meta_pixel="1573826721096411",blobs=blobs,url=D+pre+sub,theme="#FFFFFF",assets_prefix="/assets/",site_root=R,links=links,appjs=f"app-{lang}-{b.lower()}.js",
                  root_files=(lang=="es" and sub==""),sitemap=sitemap,og_url=D+ogn,title=title,description=desc,og_title=title.split(" | ")[0],og_description=desc,
                  og_image=ogimg,og_name=ogn,lang=hl,locale=loc,head_extra=alts)
         json.dump(cfg,open('/tmp/pg-cfg.json','w'),ensure_ascii=False)

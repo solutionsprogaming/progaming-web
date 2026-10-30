@@ -5,7 +5,7 @@ Si cambiaste textos de las páginas en español (src/project/*.dc.html sin -EN/-
 """
 import os, subprocess, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
-for step in ["blog_build.py", "build_site.py", "prerender.py"]:
+for step in ["blog_build.py", "legal_build.py", "build_site.py", "prerender.py"]:
     print("==", step)
     r = subprocess.run([sys.executable, step], cwd=HERE)
     if r.returncode:

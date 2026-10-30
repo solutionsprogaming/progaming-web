@@ -272,3 +272,6 @@ T2.update({
     "juegos con": ("games with", "jogos com"),
     "una integración": ("one integration", "uma integração"),
 })
+
+# Pie: privacidad
+T2["Política de privacidad"] = ("Privacy policy", "Política de privacidade")

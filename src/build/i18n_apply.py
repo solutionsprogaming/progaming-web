@@ -72,7 +72,7 @@ def translate(s, idx):
 
 
 def relink(s, lang):
-    for b in PAGES + ["Blog.dc.html"]:
+    for b in PAGES + ["Blog.dc.html", "Privacidad.dc.html"]:
         tgt = page_name(b, lang)
         s = s.replace(f'href="{b}', f'href="{tgt}').replace(f"'{b}", f"'{tgt}")
     return s
