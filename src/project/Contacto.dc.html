@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Contacto — ProGaming Solutions</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#0369A1}a:hover{color:#075985}
+.pg-root>*:not(.pg-bg){position:relative;z-index:1}
+.pg-orb{position:absolute;border-radius:50%;filter:blur(30px);will-change:transform}
+.pg-o1{animation:pgDrift 24s ease-in-out infinite}
+.pg-o2{animation:pgDrift2 30s ease-in-out infinite}
+.pg-o3{animation:pgDrift 36s ease-in-out infinite reverse}
+.pg-gear{animation:pgSpin 60s linear infinite;transform-origin:50% 50%}
+.pg-gear2{animation:pgSpin 45s linear infinite reverse;transform-origin:50% 50%}
+.pg-phone{animation:pgBob 6s ease-in-out infinite}
+.pg-phone:nth-child(2n){animation-delay:-3s}
+.pg-phone:nth-child(3n){animation-delay:-1.5s}
+.pg-track{animation:pgMarquee 40s linear infinite}
+.pg-marquee:hover .pg-track{animation-play-state:paused}
+.pg-glow{animation:pgPulse 3.2s ease-in-out infinite}
+.pg-shine{background-size:200% auto;animation:pgShine 6s linear infinite}
+@keyframes pgDrift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(90px,70px) scale(1.15)}}
+@keyframes pgDrift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-110px,40px) scale(1.1)}}
+@keyframes pgSpin{to{transform:rotate(360deg)}}
+@keyframes pgBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes pgMarquee{to{transform:translateX(-50%)}}
+@keyframes pgPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}50%{box-shadow:0 0 0 12px rgba(37,211,102,0)}}
+@keyframes pgShine{to{background-position:200% center}}
+.pg-orbit{animation:pgSpin 50s linear infinite}
+.pg-counter{animation:pgSpin 50s linear infinite reverse}
+@media (max-width:560px){.pg-hub{transform:scale(.72);height:380px !important;margin:-40px 0}}
+@property --pga{syntax:'<angle>';initial-value:0deg;inherits:false}
+.pg-aurora{animation:pgSpin 40s linear infinite}
+.pg-dot{position:absolute;border-radius:50%;background:#93A4C3;animation:pgTwinkle 4s ease-in-out infinite}
+.pg-chip{position:absolute;filter:drop-shadow(0 10px 18px rgba(15,23,42,.18));animation:pgFloat 18s ease-in-out infinite}
+.pg-beam{animation:pgBeam 9s ease-in-out infinite}
+.pg-ring{position:relative;isolation:isolate}
+.pg-ring{box-shadow:0 0 70px rgba(59,163,255,.22),0 0 140px rgba(167,139,250,.14)}
+.pg-ring::before{content:"";position:absolute;inset:-2px;border-radius:18px;padding:2px;background:conic-gradient(from var(--pga),#1D4ED8,#6D28D9,#0E7490,#25D366,#1D4ED8);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);pointer-events:none;animation:pgRing 6s linear infinite}
+@keyframes pgRing{to{--pga:360deg}}
+@keyframes pgTwinkle{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:.9;transform:scale(1)}}
+@keyframes pgFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-30px) rotate(180deg)}}
+@keyframes pgBeam{0%,100%{transform:translateX(-30%) rotate(-12deg);opacity:.0}40%,60%{opacity:.5}50%{transform:translateX(30%) rotate(-12deg)}}
+@media (prefers-reduced-motion:reduce){.pg-orb,.pg-gear,.pg-gear2,.pg-phone,.pg-track,.pg-glow,.pg-shine,.pg-aurora,.pg-dot,.pg-chip,.pg-beam,.pg-ring::before,.pg-orbit,.pg-counter{animation:none !important}}
+</style>
+</helmet><!-- estilo B -->
+<div class="pg-root" style="background: #FFFFFF; color: #1E293B; font-family: Manrope, system-ui, sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh; position: relative; overflow: hidden">
+
+
+<!-- NAV -->
+<header style="border-bottom: 1px solid rgba(30,41,90,0.08); position: relative">
+<div style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="Home.dc.html" aria-label="ProGaming Solutions — inicio" style="display: flex; align-items: center; text-decoration: none">
+<img src="/_blob/2b23518a87fc3b707c335aedfa018f92" alt="ProGaming Solutions" style="height: 52px; width: auto; display: block">
+</a>
+<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 4px 28px; font-size: 15px">
+<a href="Home.dc.html" style="color: #334155; text-decoration: none">Inicio</a>
+<a href="Plataformas.dc.html" style="color: #334155; text-decoration: none">Plataformas</a>
+<a href="Fichas-Claro.dc.html" style="color: #334155; text-decoration: none">Fichas</a>
+<a href="Api.dc.html" style="color: #334155; text-decoration: none">API</a>
+<a href="Blog.dc.html" style="color: #334155; text-decoration: none">Blog</a>
+<a href="Contacto.dc.html" aria-current="page" style="color: #0B1630; font-weight: 600; text-decoration: none; border-bottom: 2px solid {{accent}}; padding-bottom: 2px">Contacto</a>
+
+<span class="pg-lang" role="group" aria-label="Idioma / Language" style="display: inline-flex; align-items: center; gap: 2px; border: 1px solid #CBD5E1; border-radius: 8px; padding: 2px"><a href="Contacto.dc.html" aria-current="true" lang="es" style="color: #FFFFFF; background: {{accent}}; text-decoration: none; font-weight: 700; font-size: 12px; padding: 4px 8px; border-radius: 6px">ES</a><a href="Contacto-EN.dc.html" lang="en" style="color: #334155; text-decoration: none; font-weight: 600; font-size: 12px; padding: 4px 8px; border-radius: 6px">EN</a><a href="Contacto-PT.dc.html" lang="pt-BR" style="color: #334155; text-decoration: none; font-weight: 600; font-size: 12px; padding: 4px 8px; border-radius: 6px">PT</a></span>
+</nav>
+<a href="{{waGeneral}}" target="_blank" rel="noopener" style="background: #25D366; color: #04210F; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Escríbenos por WhatsApp</a>
+</div>
+</header>
+
+
+<!-- HERO CONTACTO -->
+<section id="inicio" style="max-width: 1248px; margin: 0 auto; padding: 32px 24px 0">
+<div style="background: #F2F6FF; border: 1px solid #DCE6FA; border-radius: 32px; padding: clamp(28px, 5vw, 64px); box-sizing: border-box">
+<p style="margin: 0 0 18px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: {{accent}}; display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: 0 0 28px; height: 3px; border-radius: 3px; background: {{accent}}"></span>Contacto</p>
+<h1 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 58px; line-height: 1.05; letter-spacing: -1.4px; color: #0B1630; max-width: 860px">Hablemos de <span style="color: {{accent}}">tu proyecto</span></h1>
+<p style="margin: 22px 0 0; font-size: 19px; color: #475569; max-width: 680px">Escríbenos por el canal que prefieras. La respuesta más rápida es por WhatsApp o Telegram, y también te atendemos por correo.</p>
+</div>
+</section>
+
+<!-- CANALES -->
+<section style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 0">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px">
+<sc-for list="{{channels}}" as="c" hint-placeholder-count="4">
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-top: 4px solid {{c.color}}; border-radius: 18px; padding: 26px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 10px 30px rgba(15,23,42,0.06)">
+<span style="width: 48px; height: 48px; border-radius: 12px; background: {{c.soft}}; color: {{c.color}}; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{c.icon}}"></path></svg></span>
+<span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 20px; color: #0B1630">{{c.title}}</span>
+<span style="font-size: 14px; color: #334155; overflow-wrap: anywhere">{{c.value}}</span>
+<span style="font-size: 13px; color: #5B6B85; flex: 1">{{c.note}}</span>
+<a href="{{c.href}}" target="_blank" rel="noopener" style="{{c.btn}}">{{c.cta}}</a>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- ARMADOR -->
+<section id="contacto" style="max-width: 1248px; margin: 0 auto; padding: 104px 24px 0">
+<div style="background: #F2F6FF; border: 1px solid #DCE6FA; border-radius: 32px; padding: clamp(28px, 5vw, 64px); box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 340px; min-width: 0">
+<p style="margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: {{accent}}; display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: 0 0 28px; height: 3px; border-radius: 3px; background: {{accent}}"></span>Mensaje rápido</p>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.1; letter-spacing: -1.2px; color: #0B1630">Arma tu mensaje en segundos</h2>
+<p style="margin: 16px 0 0; font-size: 17px; color: #475569">Elige qué te interesa y envíalo por WhatsApp o por correo, con el texto ya escrito.</p>
+<div style="margin-top: 28px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; gap: 12px; align-items: center; background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 14px; padding: 16px"><span aria-hidden="true" style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 22px; color: {{accent}}">24/7</span><span style="font-size: 15px; color: #334155">Soporte técnico todos los días.</span></div>
+<div style="display: flex; gap: 12px; align-items: center; background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 14px; padding: 16px"><span aria-hidden="true" style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 22px; color: {{accent}}">ES · EN · PT</span><span style="font-size: 15px; color: #334155">Te atendemos en español, inglés y portugués.</span></div>
+</div>
+</div>
+<div style="flex: 1 1 480px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px; box-shadow: 0 10px 30px rgba(15,23,42,0.06)">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 14px; color: #334155">1. ¿Qué te interesa?</span>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px">
+<sc-for list="{{options}}" as="o" hint-placeholder-count="5">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #334155">2. Tu nombre (opcional)<input type="text" value="{{name}}" onChange="{{setName}}" placeholder="Ej. Carlos — Casino Norte" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; padding: 12px 14px; color: #1E293B; font: inherit; font-size: 15px; min-height: 44px; box-sizing: border-box"></label>
+<div style="background: #FFFFFF; border: 1px dashed #CBD5E1; border-radius: 10px; padding: 14px 16px; font-size: 14px; color: #475569"><span style="display: block; font-size: 12px; color: #5B6B85; margin-bottom: 4px">Mensaje que se enviará</span>{{preview}}</div>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<a href="{{waCustom}}" target="_blank" rel="noopener" style="flex: 1 1 220px; justify-content: center; background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 17px; padding: 16px 22px; border-radius: 999px; min-height: 54px; box-sizing: border-box; display: flex; align-items: center; gap: 10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Enviar por WhatsApp</a>
+<a href="{{mailCustom}}" style="flex: 1 1 200px; justify-content: center; border: 1px solid #CBD5E1; color: #0B1630; background: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px; padding: 15px 20px; border-radius: 999px; min-height: 54px; box-sizing: border-box; display: flex; align-items: center; gap: 8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM4 7l8 6 8-6"></path></svg>Enviar por correo</a>
+</div>
+</div>
+</div>
+</section>
+<div style="height: 104px"></div>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid rgba(30,41,90,0.08); background: #F8FAFC">
+<div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 28px; font-size: 14px; color: #5B6B85">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px">
+<img src="/_blob/2b23518a87fc3b707c335aedfa018f92" alt="ProGaming Solutions" style="height: 40px; width: auto; align-self: flex-start">
+<span>Tecnología de alto rendimiento para operadores de juego: soluciones rápidas, seguras y sin límites.</span>
+<span>© 2026 ProGaming Solutions</span>
+</div>
+<nav aria-label="Páginas" style="flex: 0 1 240px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600; color: #0B1630">Páginas</span>
+<a href="Home.dc.html" style="color: #334155; text-decoration: none">Inicio</a>
+<a href="Plataformas.dc.html" style="color: #334155; text-decoration: none">Plataformas personalizadas</a>
+<a href="Fichas-Claro.dc.html" style="color: #334155; text-decoration: none">Venta de fichas</a>
+<a href="Api.dc.html" style="color: #334155; text-decoration: none">API de juegos</a>
+<a href="Blog.dc.html" style="color: #334155; text-decoration: none">Noticias y blog</a>
+<a href="Contacto.dc.html" style="color: #334155; text-decoration: none">Contacto</a>
+</nav>
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600; color: #0B1630">Contacto</span>
+<a href="{{waGeneral}}" target="_blank" rel="noopener" style="color: #334155; text-decoration: none">WhatsApp {{waDisplay}}</a>
+<span>Usuario de WhatsApp: @progamingsolutions</span>
+<a href="https://t.me/progamingsolutions" target="_blank" rel="noopener" style="color: #334155; text-decoration: none">Telegram @progamingsolutions</a>
+<a href="mailto:progamingsolutions@gmail.com" style="color: #334155; text-decoration: none">progamingsolutions@gmail.com</a>
+<a href="mailto:iglatamsarah@gmail.com" style="color: #334155; text-decoration: none">iglatamsarah@gmail.com</a>
+<p style="margin: 8px 0 0">Solo para mayores de 18 años. No garantizamos resultados ni ganancias; cada operador es responsable de cumplir la regulación de su mercado.</p>
+</div>
+</div>
+</footer>
+
+
+<!-- BOTÓN FLOTANTE -->
+<a href="{{waGeneral}}" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp" style="position: fixed; right: 20px; bottom: 20px; z-index: 50; background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 22px 14px 18px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(15,23,42,0.18)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>WhatsApp</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"whatsapp":{"editor":"text","default":"573205519656","section":"WhatsApp"},"accent":{"editor":"color","default":"#1D4ED8","options":["#1D4ED8","#0E7490","#6D28D9","#047857"]},"$preview":{"width":1440,"height":2600}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { interest: 0, name: '' }; }
+  renderVals() {
+    var accent = this.props.accent ?? '#1D4ED8';
+    var wa = String(this.props.whatsapp ?? '573205519656').replace(/\D/g, '');
+    var link = function (t) { return 'https://wa.me/' + wa + '?text=' + encodeURIComponent(t); };
+    var waDisplay = '+' + wa.slice(0, 2) + ' ' + wa.slice(2, 5) + ' ' + wa.slice(5, 8) + ' ' + wa.slice(8);
+    var btnBase = 'margin-top: 6px; justify-content: center; text-decoration: none; font-weight: 700; font-size: 15px; padding: 12px 16px; border-radius: 999px; min-height: 46px; box-sizing: border-box; display: flex; align-items: center; ';
+    var channels = [
+      { title: 'WhatsApp', value: waDisplay, note: 'La respuesta más rápida.', cta: 'Abrir WhatsApp', href: link('Hola, quiero información sobre los servicios de ProGaming Solutions.'), color: '#15803D', soft: 'rgba(37,211,102,0.14)', btn: btnBase + 'background: #25D366; color: #04210F;', icon: 'M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z' },
+      { title: 'Telegram', value: '@progamingsolutions', note: 'Escríbenos directo por Telegram.', cta: 'Abrir Telegram', href: 'https://t.me/progamingsolutions', color: '#0284C7', soft: 'rgba(2,132,199,0.12)', btn: btnBase + 'background: #229ED9; color: #FFFFFF;', icon: 'M22 3L2 11l7 2 2 7 4-5 5 4 2-16zM9 13l9-7' },
+      { title: 'Correo', value: 'progamingsolutions@gmail.com', note: 'Para propuestas, documentos y consultas.', cta: 'Enviar correo', href: 'mailto:progamingsolutions@gmail.com', color: '#1D4ED8', soft: 'rgba(29,78,216,0.10)', btn: btnBase + 'background: #1D4ED8; color: #FFFFFF;', icon: 'M4 4h16v16H4zM4 7l8 6 8-6' },
+      { title: 'Correo comercial', value: 'iglatamsarah@gmail.com', note: 'Atención comercial y nuevos clientes.', cta: 'Enviar correo', href: 'mailto:iglatamsarah@gmail.com', color: '#6D28D9', soft: 'rgba(109,40,217,0.10)', btn: btnBase + 'background: #6D28D9; color: #FFFFFF;', icon: 'M4 4h16v16H4zM4 7l8 6 8-6' }
+    ];
+    var labels = ['Una plataforma con mi marca', 'Comprar fichas', 'Integrar la API', 'Chat integrado / automatizaciones', 'Ser distribuidor / socio'];
+    var sel = this.state.interest;
+    var nm = (this.state.name || '').trim();
+    var msg = (nm ? 'Hola, soy ' + nm + '. ' : 'Hola. ') + 'Me interesa: ' + labels[sel] + '. Quiero más información sobre ProGaming Solutions.';
+    var subject = 'ProGaming Solutions — ' + labels[sel];
+    var ob = 'font: inherit; font-size: 15px; font-weight: 500; text-align: left; padding: 12px 14px; border-radius: 999px; min-height: 48px; cursor: pointer; ';
+    var options = labels.map((l, i) => ({ label: l, pressed: i === sel ? 'true' : 'false', style: ob + (i === sel ? 'background: rgba(37,211,102,0.12); border: 1.5px solid #25D366; color: #0B1630;' : 'background: #FFFFFF; border: 1px solid #CBD5E1; color: #334155;'), pick: () => this.setState({ interest: i }) }));
+    return {
+      accent: accent, channels: channels, options: options, preview: msg, name: this.state.name,
+      setName: (e) => this.setState({ name: e.target.value }),
+      waGeneral: link('Hola, quiero información sobre los servicios de ProGaming Solutions.'),
+      waCustom: link(msg),
+      mailCustom: 'mailto:progamingsolutions@gmail.com?cc=iglatamsarah@gmail.com&subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(msg),
+      waDisplay: waDisplay
+    };
+  }
+}
+</script>
+</body>
+</html>

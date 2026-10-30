@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>API de jogos: mais de 2.000 jogos com uma integração | ProGaming Solutions</title>
+<meta name="description" content="Integre mais de 2.000 jogos da Evolution, Pragmatic Play, PG Soft, NetEnt e outros com uma única API.">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="canonical" href="https://progamingsolutions.net/pt/api/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="ProGaming Solutions">
+<meta property="og:title" content="API de jogos: mais de 2.000 jogos com uma integração">
+<meta property="og:description" content="Integre mais de 2.000 jogos da Evolution, Pragmatic Play, PG Soft, NetEnt e outros com uma única API.">
+<meta property="og:image" content="https://progamingsolutions.net/og-image.jpg">
+<meta property="og:url" content="https://progamingsolutions.net/pt/api/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="es" href="https://progamingsolutions.net/api/">
+<link rel="alternate" hreflang="en" href="https://progamingsolutions.net/en/api/">
+<link rel="alternate" hreflang="pt-BR" href="https://progamingsolutions.net/pt/api/">
+<link rel="alternate" hreflang="x-default" href="https://progamingsolutions.net/api/">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- GOOGLE ANALYTICS: pega aquí el código que te da Google (empieza con <script async src="https://www.googletagmanager.com/gtag/js?id=G-...">) -->
+
+<style>
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+img{max-width:100%}
+nav a:hover{color:#1D4ED8 !important}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #7CC4FF;outline-offset:3px}
+section[id]{scroll-margin-top:16px}
+.skip{position:absolute;left:-9999px;top:8px;background:#fff;color:#000;padding:8px 12px;border-radius:6px;z-index:100}
+.skip:focus{left:8px}
+input::placeholder{color:#6F82A6}
+a[href^="https://wa.me"]:hover{filter:brightness(1.08)}
+@media (max-width:560px){h1{font-size:clamp(36px,10vw,60px) !important} h2{font-size:clamp(28px,8vw,44px) !important}}
+@media (max-width:560px){a[aria-label][style*="position: fixed"]{font-size:0 !important;padding:16px !important;gap:0 !important;right:16px !important;bottom:16px !important}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{margin:0;background:#FFFFFF}
+a{color:#0369A1}a:hover{color:#075985}
+.pg-root>*:not(.pg-bg){position:relative;z-index:1}
+.pg-orb{position:absolute;border-radius:50%;filter:blur(30px);will-change:transform}
+.pg-o1{animation:pgDrift 24s ease-in-out infinite}
+.pg-o2{animation:pgDrift2 30s ease-in-out infinite}
+.pg-o3{animation:pgDrift 36s ease-in-out infinite reverse}
+.pg-gear{animation:pgSpin 60s linear infinite;transform-origin:50% 50%}
+.pg-gear2{animation:pgSpin 45s linear infinite reverse;transform-origin:50% 50%}
+.pg-phone{animation:pgBob 6s ease-in-out infinite}
+.pg-phone:nth-child(2n){animation-delay:-3s}
+.pg-phone:nth-child(3n){animation-delay:-1.5s}
+.pg-track{animation:pgMarquee 40s linear infinite}
+.pg-marquee:hover .pg-track{animation-play-state:paused}
+.pg-glow{animation:pgPulse 3.2s ease-in-out infinite}
+.pg-shine{background-size:200% auto;animation:pgShine 6s linear infinite}
+@keyframes pgDrift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(90px,70px) scale(1.15)}}
+@keyframes pgDrift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-110px,40px) scale(1.1)}}
+@keyframes pgSpin{to{transform:rotate(360deg)}}
+@keyframes pgBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes pgMarquee{to{transform:translateX(-50%)}}
+@keyframes pgPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}50%{box-shadow:0 0 0 12px rgba(37,211,102,0)}}
+@keyframes pgShine{to{background-position:200% center}}
+.pg-orbit{animation:pgSpin 50s linear infinite}
+.pg-counter{animation:pgSpin 50s linear infinite reverse}
+@media (max-width:560px){.pg-hub{transform:scale(.72);height:380px !important;margin:-40px 0}}
+@property --pga{syntax:'<angle>';initial-value:0deg;inherits:false}
+.pg-aurora{animation:pgSpin 40s linear infinite}
+.pg-dot{position:absolute;border-radius:50%;background:#93A4C3;animation:pgTwinkle 4s ease-in-out infinite}
+.pg-chip{position:absolute;filter:drop-shadow(0 10px 18px rgba(15,23,42,.18));animation:pgFloat 18s ease-in-out infinite}
+.pg-beam{animation:pgBeam 9s ease-in-out infinite}
+.pg-ring{position:relative;isolation:isolate}
+.pg-ring{box-shadow:0 0 70px rgba(59,163,255,.22),0 0 140px rgba(167,139,250,.14)}
+.pg-ring::before{content:"";position:absolute;inset:-2px;border-radius:18px;padding:2px;background:conic-gradient(from var(--pga),#1D4ED8,#6D28D9,#0E7490,#25D366,#1D4ED8);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);pointer-events:none;animation:pgRing 6s linear infinite}
+@keyframes pgRing{to{--pga:360deg}}
+@keyframes pgTwinkle{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:.9;transform:scale(1)}}
+@keyframes pgFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-30px) rotate(180deg)}}
+@keyframes pgBeam{0%,100%{transform:translateX(-30%) rotate(-12deg);opacity:.0}40%,60%{opacity:.5}50%{transform:translateX(30%) rotate(-12deg)}}
+@media (prefers-reduced-motion:reduce){.pg-orb,.pg-gear,.pg-gear2,.pg-phone,.pg-track,.pg-glow,.pg-shine,.pg-aurora,.pg-dot,.pg-chip,.pg-beam,.pg-ring::before,.pg-orbit,.pg-counter{animation:none !important}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#inicio">Saltar al contenido</a>
+<div id="dc-root">
+
+<div class="pg-root" style="background: #FFFFFF; color: #1E293B; font-family: Manrope, system-ui, sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh; position: relative; overflow: hidden">
+
+
+
+<header style="border-bottom: 1px solid rgba(30,41,90,0.08); position: relative">
+<div style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="/pt/" aria-label="ProGaming Solutions — início" style="display: flex; align-items: center; text-decoration: none">
+<img src="/assets/2b23518a-logo-color-light.png" alt="ProGaming Solutions" style="height: 52px; width: auto; display: block">
+</a>
+<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 4px 28px; font-size: 15px">
+<a href="/pt/" style="color: #334155; text-decoration: none">Início</a>
+<a href="/pt/plataformas/" style="color: #334155; text-decoration: none">Plataformas</a>
+<a href="/pt/fichas/" style="color: #334155; text-decoration: none">Fichas</a>
+<a href="/pt/api/" aria-current="page" style="color: #0B1630; font-weight: 600; text-decoration: none; border-bottom: 2px solid #1D4ED8; padding-bottom: 2px">API</a>
+<a href="/pt/blog/" style="color: #334155; text-decoration: none">Blog</a>
+<a href="/pt/contacto/" style="color: #334155; text-decoration: none">Contato</a>
+<span class="pg-lang" role="group" aria-label="Idioma / Language" style="display: inline-flex; align-items: center; gap: 2px; border: 1px solid #CBD5E1; border-radius: 8px; padding: 2px"><a href="/api/" lang="es" style="color: #334155; text-decoration: none; font-weight: 600; font-size: 12px; padding: 4px 8px; border-radius: 6px">ES</a><a href="/en/api/" lang="en" style="color: #334155; text-decoration: none; font-weight: 600; font-size: 12px; padding: 4px 8px; border-radius: 6px">EN</a><a href="/pt/api/" aria-current="true" lang="pt-BR" style="color: #FFFFFF; background: #1D4ED8; text-decoration: none; font-weight: 700; font-size: 12px; padding: 4px 8px; border-radius: 6px">PT</a></span>
+</nav>
+<a href="https://wa.me/573205519656?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20ProGaming%20Solutions." target="_blank" rel="noopener" style="background: #25D366; color: #04210F; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Fale conosco no WhatsApp</a>
+</div>
+</header>
+
+
+<section id="inicio" style="max-width: 1248px; margin: 0 auto; padding: 32px 24px 0">
+<div style="background: #F2F6FF; border: 1px solid #DCE6FA; border-radius: 32px; padding: clamp(28px, 5vw, 64px); box-sizing: border-box">
+<p style="margin: 0 0 18px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #1D4ED8; display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: 0 0 28px; height: 3px; border-radius: 3px; background: #1D4ED8"></span>API de jogos</p>
+<h1 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 58px; line-height: 1.05; letter-spacing: -1.4px; color: #0B1630; max-width: 900px">Mais de 2.000 jogos na sua plataforma com <span style="color: #1D4ED8">uma única integração</span></h1>
+<p style="margin: 22px 0 0; font-size: 19px; color: #475569; max-width: 700px">A ProGaming Solutions atua como ponto central de integração: conectamos o catálogo de vários provedores para que você não precise desenvolver uma integração para cada jogo.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px">
+<a class="pg-glow" href="https://wa.me/573205519656?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20para%20integrar%20a%20API%20de%20jogos%20da%20ProGaming%20Solutions." target="_blank" rel="noopener" style="background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 999px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Quero integrar a API</a>
+<a href="#proveedores" style="border: 1px solid #CBD5E1; color: #1E293B; text-decoration: none; font-weight: 600; padding: 15px 26px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Ver provedores</a>
+</div>
+</div>
+</section>
+
+
+<section id="proveedores" style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 0">
+<p style="margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #1D4ED8; display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: 0 0 28px; height: 3px; border-radius: 3px; background: #1D4ED8"></span>Provedores</p>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.1; letter-spacing: -1.2px; color: #0B1630; max-width: 760px">Os provedores mais jogados, em um só lugar</h2>
+<p style="margin: 14px 0 0; font-size: 17px; color: #475569; max-width: 680px">Slots, cassino ao vivo, crash games e muito mais dos principais estúdios do mercado.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; margin-top: 36px">
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+
+<span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.3px; color: #F8FAFC">Evolution</span>
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+
+<span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.3px; color: #F8FAFC">Pragmatic Play</span>
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/d48e454e-prov-netent.webp" alt="NetEnt" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/a6cdbbbb-prov-pgsoft.webp" alt="PG Soft" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/75151d94-prov-microgaming.webp" alt="Microgaming" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/7a6ba0cc-prov-aristocrat.webp" alt="Aristocrat" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/5db9c77a-prov-novomatic.webp" alt="Novomatic" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/d8b3874c-prov-igt.webp" alt="IGT" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/f9bf0110-prov-scientific-games.webp" alt="Scientific Games" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/aa1304a9-prov-egt.webp" alt="EGT Interactive" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/3ddd285a-prov-egt-digital.webp" alt="EGT Digital" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/741d69d5-prov-spribe.webp" alt="Spribe" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/ab908f42-prov-habanero.webp" alt="Habanero" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/c8762139-prov-rubyplay.webp" alt="RubyPlay" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/6e9f4f37-prov-booming.webp" alt="Booming Games" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/eca9c30c-prov-elk.webp" alt="ELK Studios" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/676dce19-prov-jili.webp" alt="JILI" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/a72d7feb-prov-amatic.webp" alt="Amatic" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/c4cf1968-prov-inbet.webp" alt="Inbet Games" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/f289495f-prov-igrosoft.webp" alt="Igrosoft" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/754bf550-prov-apex.webp" alt="Apex" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/7083ac23-prov-dlv.webp" alt="DLV" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<img src="/assets/5a0df4c0-prov-firekirin.webp" alt="Fire Kirin" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block">
+
+</div>
+
+</div>
+<p style="margin: 16px 0 0; font-size: 13px; color: #5B6B85">A disponibilidade de cada provedor depende da plataforma e do acordo comercial.</p>
+</section>
+
+
+<section id="modelos" style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 0">
+<div style="background: rgba(255,255,255,0.92); border: 1px solid #E2E8F0; border-radius: 24px; padding: clamp(28px, 5vw, 56px); box-sizing: border-box">
+<h2 style="margin: 0 0 24px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 34px; line-height: 1.15; color: #0B1630">Como funciona</h2>
+
+
+<div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+
+<div style="flex: 1 1 140px; border-radius: 12px; padding: 16px; text-align: center; border: 1px solid #CBD5E1; color: #0B1630;"><div style="font-size: 12px; opacity: 0.8">01</div><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px">Provedor</div></div>
+<span aria-hidden="true" style="color: #1D4ED8; font-size: 20px">→</span>
+
+<div style="flex: 1 1 140px; border-radius: 12px; padding: 16px; text-align: center; border: 1px solid #CBD5E1; color: #0B1630;"><div style="font-size: 12px; opacity: 0.8">02</div><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px">API</div></div>
+<span aria-hidden="true" style="color: #1D4ED8; font-size: 20px">→</span>
+
+<div style="flex: 1 1 140px; border-radius: 12px; padding: 16px; text-align: center; background: #1D4ED8; color: #FFFFFF;"><div style="font-size: 12px; opacity: 0.8">03</div><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px">ProGaming</div></div>
+<span aria-hidden="true" style="color: #1D4ED8; font-size: 20px">→</span>
+
+<div style="flex: 1 1 140px; border-radius: 12px; padding: 16px; text-align: center; border: 1px solid #CBD5E1; color: #0B1630;"><div style="font-size: 12px; opacity: 0.8">04</div><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px">Sua plataforma</div></div>
+<span aria-hidden="true" style="color: #1D4ED8; font-size: 20px">→</span>
+
+<div style="flex: 1 1 140px; border-radius: 12px; padding: 16px; text-align: center; border: 1px solid #CBD5E1; color: #0B1630;"><div style="font-size: 12px; opacity: 0.8">05</div><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px">Jogador</div></div>
+
+
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 32px">
+
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px"><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 34px; line-height: 1.1; color: #1D4ED8">+2.000</div><div style="margin-top: 6px; font-weight: 600; color: #0B1630">Jogos disponíveis</div><div style="margin-top: 2px; font-size: 14px; color: #526079">Slots, roleta, video pôquer e cassino ao vivo.</div></div>
+
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px"><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 34px; line-height: 1.1; color: #1D4ED8">1</div><div style="margin-top: 6px; font-weight: 600; color: #0B1630">Única integração</div><div style="margin-top: 2px; font-size: 14px; color: #526079">Vários provedores a partir de um único ponto.</div></div>
+
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px"><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 34px; line-height: 1.1; color: #1D4ED8">Auto</div><div style="margin-top: 6px; font-weight: 600; color: #0B1630">Jogos sempre em dia</div><div style="margin-top: 2px; font-size: 14px; color: #526079">Novos títulos e atualizações chegam automaticamente.</div></div>
+
+</div>
+
+
+<div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px 24px">
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1D4ED8" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"></path></svg>
+<div style="flex: 1 1 400px; min-width: 0"><div style="font-weight: 600; color: #0B1630">Grupos de jogadores com acompanhamento próprio</div><div style="font-size: 15px; color: #526079">Separe seus jogadores em grupos com identificadores únicos e acompanhe a receita de cada grupo separadamente: ideal para agentes, distribuidores ou marcas diferentes.</div></div>
+</div>
+
+<h3 style="margin: 40px 0 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; color: #0B1630">O que a API gerencia</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 18px">
+
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 14px; padding: 18px"><div style="font-weight: 600; color: #0B1630">Catálogo de jogos</div><div style="margin-top: 4px; font-size: 14px; color: #526079">Inclusão e atualização de jogos de diferentes provedores.</div></div>
+
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 14px; padding: 18px"><div style="font-weight: 600; color: #0B1630">Autenticação de jogadores</div><div style="margin-top: 4px; font-size: 14px; color: #526079">Conexão entre a conta do jogador e o provedor.</div></div>
+
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 14px; padding: 18px"><div style="font-weight: 600; color: #0B1630">Saldo e transações</div><div style="margin-top: 4px; font-size: 14px; color: #526079">Validação de apostas, prêmios, recargas e movimentações.</div></div>
+
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 14px; padding: 18px"><div style="font-weight: 600; color: #0B1630">Sessões de jogo</div><div style="margin-top: 4px; font-size: 14px; color: #526079">Criação e gestão das sessões dos jogadores.</div></div>
+
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 14px; padding: 18px"><div style="font-weight: 600; color: #0B1630">Histórico e relatórios</div><div style="margin-top: 4px; font-size: 14px; color: #526079">Informações sobre as operações realizadas.</div></div>
+
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 14px; padding: 18px"><div style="font-weight: 600; color: #0B1630">Bônus e promoções</div><div style="margin-top: 4px; font-size: 14px; color: #526079">Funções promocionais quando o provedor oferece suporte.</div></div>
+
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 14px; padding: 18px"><div style="font-weight: 600; color: #0B1630">Sincronização automática</div><div style="margin-top: 4px; font-size: 14px; color: #526079">Disponibilidade de jogos sempre atualizada.</div></div>
+
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 14px; padding: 18px"><div style="font-weight: 600; color: #0B1630">Gestão centralizada</div><div style="margin-top: 4px; font-size: 14px; color: #526079">Todos os provedores em um único painel.</div></div>
+
+</div>
+<p style="margin: 18px 0 0; font-size: 13px; color: #5B6B85">As funções disponíveis dependem das capacidades de cada provedor.</p>
+
+<h3 style="margin: 40px 0 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; color: #0B1630">Como é a integração</h3>
+<ol style="margin: 18px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px">
+
+<li style="position: relative; background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px"><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 32px; line-height: 1; color: #1D4ED8">01</div><div style="margin-top: 12px; font-weight: 600; color: #0B1630">Escolha os provedores</div><div style="margin-top: 4px; font-size: 14px; color: #526079">Definimos juntos os provedores e jogos que você quer adicionar.</div></li>
+
+<li style="position: relative; background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px"><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 32px; line-height: 1; color: #1D4ED8">02</div><div style="margin-top: 12px; font-weight: 600; color: #0B1630">Implementação</div><div style="margin-top: 4px; font-size: 14px; color: #526079">Conectamos sua plataforma à nossa API junto com a sua equipe.</div></li>
+
+<li style="position: relative; background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px"><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 32px; line-height: 1; color: #1D4ED8">03</div><div style="margin-top: 12px; font-weight: 600; color: #0B1630">Testes e ajustes</div><div style="margin-top: 4px; font-size: 14px; color: #526079">Validamos saldos, sessões e apostas antes de entrar no ar.</div></li>
+
+<li style="position: relative; background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px"><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 32px; line-height: 1; color: #1D4ED8">04</div><div style="margin-top: 12px; font-weight: 600; color: #0B1630">Manutenção contínua</div><div style="margin-top: 4px; font-size: 14px; color: #526079">Atualizações, novos jogos e suporte permanente.</div></li>
+
+</ol>
+<p style="margin: 18px 0 0; font-size: 14px; color: #5B6B85">Requisitos técnicos: acesso ao backend da sua plataforma, comunicação em JSON ou XML e troca de dados segura. Acompanhamos você da integração à manutenção.</p>
+
+</div>
+
+</div>
+</section>
+
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 0">
+<div style="border: 1px solid #1D4ED8; border-radius: 20px; padding: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; box-sizing: border-box">
+<div style="flex: 1 1 480px; min-width: 0"><h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; color: #0B1630">Quer automatizar com chatbots?</h2><p style="margin: 8px 0 0; font-size: 16px; color: #475569">Também temos uma API para o seu painel administrativo: crie usuários e carregue saldo a partir de chatbots, Zapier, Make ou n8n.</p></div>
+<a href="/pt/plataformas/#automatizaciones" style="color: #0B1630; text-decoration: none; font-weight: 600; border: 1px solid #CBD5E1; border-radius: 999px; padding: 13px 18px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">Ver a API do painel <span aria-hidden="true" style="color: #1D4ED8">→</span></a>
+</div>
+</section>
+
+
+<section id="contacto" style="max-width: 1248px; margin: 0 auto; padding: 104px 24px 104px">
+<div style="background: #F2F6FF; border: 1px solid #DCE6FA; border-radius: 32px; padding: clamp(28px, 5vw, 64px); box-sizing: border-box">
+<div style="background: rgba(255,255,255,0.92); border: 1px solid #E2E8F0; border-radius: 24px; padding: clamp(28px, 5vw, 56px); text-align: center; box-sizing: border-box">
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.1; color: #0B1630">Vamos falar da sua integração</h2>
+<p style="margin: 14px auto 0; font-size: 17px; color: #475569; max-width: 620px">Conte qual plataforma você usa e quais provedores quer adicionar. Respondemos pelo WhatsApp com a proposta.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px">
+<a href="https://wa.me/573205519656?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20para%20integrar%20a%20API%20de%20jogos%20da%20ProGaming%20Solutions." target="_blank" rel="noopener" style="background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 999px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Escrever no WhatsApp</a>
+</div>
+<p style="margin: 18px 0 0; font-size: 15px; color: #526079">+57 320 551 9656 · @progamingsolutions</p>
+</div>
+</div>
+</section>
+
+
+<footer style="border-top: 1px solid rgba(30,41,90,0.08); background: #F8FAFC">
+<div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 28px; font-size: 14px; color: #5B6B85">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px">
+<img src="/assets/2b23518a-logo-color-light.png" alt="ProGaming Solutions" style="height: 40px; width: auto; align-self: flex-start">
+<span>Tecnologia de alto desempenho para operadores de jogos: soluções rápidas, seguras e sem limites.</span>
+<span>© 2026 ProGaming Solutions</span>
+</div>
+<nav aria-label="Páginas" style="flex: 0 1 240px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600; color: #0B1630">Páginas</span>
+<a href="/pt/" style="color: #334155; text-decoration: none">Início</a>
+<a href="/pt/plataformas/" style="color: #334155; text-decoration: none">Plataformas personalizadas</a>
+<a href="/pt/fichas/" style="color: #334155; text-decoration: none">Venda de fichas</a>
+<a href="/pt/api/" style="color: #334155; text-decoration: none">API de jogos</a>
+<a href="/pt/blog/" style="color: #334155; text-decoration: none">Notícias e blog</a>
+<a href="/pt/contacto/" style="color: #334155; text-decoration: none">Contato</a>
+</nav>
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600; color: #0B1630">Contato</span>
+<a href="https://wa.me/573205519656?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20ProGaming%20Solutions." target="_blank" rel="noopener" style="color: #334155; text-decoration: none">WhatsApp +57 320 551 9656</a>
+<span>Usuário do WhatsApp: @progamingsolutions</span>
+<a href="https://t.me/progamingsolutions" target="_blank" rel="noopener" style="color: #334155; text-decoration: none">Telegram @progamingsolutions</a>
+<a href="mailto:progamingsolutions@gmail.com" style="color: #334155; text-decoration: none">progamingsolutions@gmail.com</a>
+<a href="mailto:iglatamsarah@gmail.com" style="color: #334155; text-decoration: none">iglatamsarah@gmail.com</a>
+<p style="margin: 8px 0 0">Somente para maiores de 18 anos. Não garantimos resultados nem ganhos; cada operador é responsável por cumprir a regulamentação do seu mercado.</p>
+</div>
+</div>
+</footer>
+
+
+<a href="https://wa.me/573205519656?text=Ol%C3%A1%2C%20quero%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20ProGaming%20Solutions." target="_blank" rel="noopener" aria-label="Fale conosco no WhatsApp" style="position: fixed; right: 20px; bottom: 20px; z-index: 50; background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 22px 14px 18px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(15,23,42,0.18)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>WhatsApp</a>
+</div>
+
+</div>
+<template id="dc-tpl">
+<!-- estilo B -->
+<div class="pg-root" style="background: #FFFFFF; color: #1E293B; font-family: Manrope, system-ui, sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh; position: relative; overflow: hidden">
+
+
+<!-- NAV -->
+<header style="border-bottom: 1px solid rgba(30,41,90,0.08); position: relative">
+<div style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="/pt/" aria-label="ProGaming Solutions — início" style="display: flex; align-items: center; text-decoration: none">
+<img src="/assets/2b23518a-logo-color-light.png" alt="ProGaming Solutions" style="height: 52px; width: auto; display: block">
+</a>
+<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 4px 28px; font-size: 15px">
+<a href="/pt/" style="color: #334155; text-decoration: none">Início</a>
+<a href="/pt/plataformas/" style="color: #334155; text-decoration: none">Plataformas</a>
+<a href="/pt/fichas/" style="color: #334155; text-decoration: none">Fichas</a>
+<a href="/pt/api/" aria-current="page" style="color: #0B1630; font-weight: 600; text-decoration: none; border-bottom: 2px solid {{accent}}; padding-bottom: 2px">API</a>
+<a href="/pt/blog/" style="color: #334155; text-decoration: none">Blog</a>
+<a href="/pt/contacto/" style="color: #334155; text-decoration: none">Contato</a>
+<span class="pg-lang" role="group" aria-label="Idioma / Language" style="display: inline-flex; align-items: center; gap: 2px; border: 1px solid #CBD5E1; border-radius: 8px; padding: 2px"><a href="/api/" lang="es" style="color: #334155; text-decoration: none; font-weight: 600; font-size: 12px; padding: 4px 8px; border-radius: 6px">ES</a><a href="/en/api/" lang="en" style="color: #334155; text-decoration: none; font-weight: 600; font-size: 12px; padding: 4px 8px; border-radius: 6px">EN</a><a href="/pt/api/" aria-current="true" lang="pt-BR" style="color: #FFFFFF; background: {{accent}}; text-decoration: none; font-weight: 700; font-size: 12px; padding: 4px 8px; border-radius: 6px">PT</a></span>
+</nav>
+<a href="{{waGeneral}}" target="_blank" rel="noopener" style="background: #25D366; color: #04210F; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Fale conosco no WhatsApp</a>
+</div>
+</header>
+
+<!-- HERO API -->
+<section id="inicio" style="max-width: 1248px; margin: 0 auto; padding: 32px 24px 0">
+<div style="background: #F2F6FF; border: 1px solid #DCE6FA; border-radius: 32px; padding: clamp(28px, 5vw, 64px); box-sizing: border-box">
+<p style="margin: 0 0 18px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: {{accent}}; display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: 0 0 28px; height: 3px; border-radius: 3px; background: {{accent}}"></span>API de jogos</p>
+<h1 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 58px; line-height: 1.05; letter-spacing: -1.4px; color: #0B1630; max-width: 900px">Mais de 2.000 jogos na sua plataforma com <span style="color: {{accent}}">uma única integração</span></h1>
+<p style="margin: 22px 0 0; font-size: 19px; color: #475569; max-width: 700px">A ProGaming Solutions atua como ponto central de integração: conectamos o catálogo de vários provedores para que você não precise desenvolver uma integração para cada jogo.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px">
+<a class="pg-glow" href="{{waApi}}" target="_blank" rel="noopener" style="background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 999px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Quero integrar a API</a>
+<a href="#proveedores" style="border: 1px solid #CBD5E1; color: #1E293B; text-decoration: none; font-weight: 600; padding: 15px 26px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Ver provedores</a>
+</div>
+</div>
+</section>
+
+<!-- PROVEEDORES -->
+<section id="proveedores" style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 0">
+<p style="margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: {{accent}}; display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: 0 0 28px; height: 3px; border-radius: 3px; background: {{accent}}"></span>Provedores</p>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.1; letter-spacing: -1.2px; color: #0B1630; max-width: 760px">Os provedores mais jogados, em um só lugar</h2>
+<p style="margin: 14px 0 0; font-size: 17px; color: #475569; max-width: 680px">Slots, cassino ao vivo, crash games e muito mais dos principais estúdios do mercado.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; margin-top: 36px">
+<sc-for list="{{provs}}" as="pv" hint-placeholder-count="23">
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<sc-if value="{{pv.isImg}}" hint-placeholder-val="{{ true }}"><img src="{{pv.logo}}" alt="{{pv.name}}" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block"></sc-if>
+<sc-if value="{{pv.isText}}" hint-placeholder-val="{{ false }}"><span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.3px; color: #F8FAFC">{{pv.name}}</span></sc-if>
+</div>
+</sc-for>
+</div>
+<p style="margin: 16px 0 0; font-size: 13px; color: #5B6B85">A disponibilidade de cada provedor depende da plataforma e do acordo comercial.</p>
+</section>
+
+<!-- CONTENIDO API -->
+<section id="modelos" style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 0">
+<div style="background: rgba(255,255,255,0.92); border: 1px solid #E2E8F0; border-radius: 24px; padding: clamp(28px, 5vw, 56px); box-sizing: border-box">
+<h2 style="margin: 0 0 24px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 34px; line-height: 1.15; color: #0B1630">Como funciona</h2>
+<!-- API de proveedores -->
+
+<div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<sc-for list="{{flow}}" as="f" hint-placeholder-count="5">
+<div style="{{f.style}}"><div style="font-size: 12px; opacity: 0.8">{{f.n}}</div><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px">{{f.label}}</div></div>
+<sc-if value="{{f.arrow}}" hint-placeholder-val="{{ true }}"><span aria-hidden="true" style="color: {{accent}}; font-size: 20px">→</span></sc-if>
+</sc-for>
+</div>
+<!-- Datos clave -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 32px">
+<sc-for list="{{apiStats}}" as="k" hint-placeholder-count="3">
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px"><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 34px; line-height: 1.1; color: {{accent}}">{{k.big}}</div><div style="margin-top: 6px; font-weight: 600; color: #0B1630">{{k.t}}</div><div style="margin-top: 2px; font-size: 14px; color: #526079">{{k.d}}</div></div>
+</sc-for>
+</div>
+
+<!-- Grupos de jugadores -->
+<div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px 24px">
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"></path></svg>
+<div style="flex: 1 1 400px; min-width: 0"><div style="font-weight: 600; color: #0B1630">Grupos de jogadores com acompanhamento próprio</div><div style="font-size: 15px; color: #526079">Separe seus jogadores em grupos com identificadores únicos e acompanhe a receita de cada grupo separadamente: ideal para agentes, distribuidores ou marcas diferentes.</div></div>
+</div>
+
+<h3 style="margin: 40px 0 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; color: #0B1630">O que a API gerencia</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 18px">
+<sc-for list="{{provCaps}}" as="c" hint-placeholder-count="8">
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 14px; padding: 18px"><div style="font-weight: 600; color: #0B1630">{{c.t}}</div><div style="margin-top: 4px; font-size: 14px; color: #526079">{{c.d}}</div></div>
+</sc-for>
+</div>
+<p style="margin: 18px 0 0; font-size: 13px; color: #5B6B85">As funções disponíveis dependem das capacidades de cada provedor.</p>
+<!-- Pasos -->
+<h3 style="margin: 40px 0 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; color: #0B1630">Como é a integração</h3>
+<ol style="margin: 18px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px">
+<sc-for list="{{apiSteps}}" as="st" hint-placeholder-count="4">
+<li style="position: relative; background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px"><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 32px; line-height: 1; color: {{accent}}">{{st.n}}</div><div style="margin-top: 12px; font-weight: 600; color: #0B1630">{{st.t}}</div><div style="margin-top: 4px; font-size: 14px; color: #526079">{{st.d}}</div></li>
+</sc-for>
+</ol>
+<p style="margin: 18px 0 0; font-size: 14px; color: #5B6B85">Requisitos técnicos: acesso ao backend da sua plataforma, comunicação em JSON ou XML e troca de dados segura. Acompanhamos você da integração à manutenção.</p>
+
+</div>
+
+</div>
+</section>
+
+<!-- AUTOMATIZACIONES (enlace) -->
+<section style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 0">
+<div style="border: 1px solid {{accent}}; border-radius: 20px; padding: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; box-sizing: border-box">
+<div style="flex: 1 1 480px; min-width: 0"><h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; color: #0B1630">Quer automatizar com chatbots?</h2><p style="margin: 8px 0 0; font-size: 16px; color: #475569">Também temos uma API para o seu painel administrativo: crie usuários e carregue saldo a partir de chatbots, Zapier, Make ou n8n.</p></div>
+<a href="/pt/plataformas/#automatizaciones" style="color: #0B1630; text-decoration: none; font-weight: 600; border: 1px solid #CBD5E1; border-radius: 999px; padding: 13px 18px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">Ver a API do painel <span aria-hidden="true" style="color: {{accent}}">→</span></a>
+</div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" style="max-width: 1248px; margin: 0 auto; padding: 104px 24px 104px">
+<div style="background: #F2F6FF; border: 1px solid #DCE6FA; border-radius: 32px; padding: clamp(28px, 5vw, 64px); box-sizing: border-box">
+<div style="background: rgba(255,255,255,0.92); border: 1px solid #E2E8F0; border-radius: 24px; padding: clamp(28px, 5vw, 56px); text-align: center; box-sizing: border-box">
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.1; color: #0B1630">Vamos falar da sua integração</h2>
+<p style="margin: 14px auto 0; font-size: 17px; color: #475569; max-width: 620px">Conte qual plataforma você usa e quais provedores quer adicionar. Respondemos pelo WhatsApp com a proposta.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px">
+<a href="{{waApi}}" target="_blank" rel="noopener" style="background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 999px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Escrever no WhatsApp</a>
+</div>
+<p style="margin: 18px 0 0; font-size: 15px; color: #526079">{{waDisplay}} · @progamingsolutions</p>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid rgba(30,41,90,0.08); background: #F8FAFC">
+<div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 28px; font-size: 14px; color: #5B6B85">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px">
+<img src="/assets/2b23518a-logo-color-light.png" alt="ProGaming Solutions" style="height: 40px; width: auto; align-self: flex-start">
+<span>Tecnologia de alto desempenho para operadores de jogos: soluções rápidas, seguras e sem limites.</span>
+<span>© 2026 ProGaming Solutions</span>
+</div>
+<nav aria-label="Páginas" style="flex: 0 1 240px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600; color: #0B1630">Páginas</span>
+<a href="/pt/" style="color: #334155; text-decoration: none">Início</a>
+<a href="/pt/plataformas/" style="color: #334155; text-decoration: none">Plataformas personalizadas</a>
+<a href="/pt/fichas/" style="color: #334155; text-decoration: none">Venda de fichas</a>
+<a href="/pt/api/" style="color: #334155; text-decoration: none">API de jogos</a>
+<a href="/pt/blog/" style="color: #334155; text-decoration: none">Notícias e blog</a>
+<a href="/pt/contacto/" style="color: #334155; text-decoration: none">Contato</a>
+</nav>
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600; color: #0B1630">Contato</span>
+<a href="{{waGeneral}}" target="_blank" rel="noopener" style="color: #334155; text-decoration: none">WhatsApp {{waDisplay}}</a>
+<span>Usuário do WhatsApp: @progamingsolutions</span>
+<a href="https://t.me/progamingsolutions" target="_blank" rel="noopener" style="color: #334155; text-decoration: none">Telegram @progamingsolutions</a>
+<a href="mailto:progamingsolutions@gmail.com" style="color: #334155; text-decoration: none">progamingsolutions@gmail.com</a>
+<a href="mailto:iglatamsarah@gmail.com" style="color: #334155; text-decoration: none">iglatamsarah@gmail.com</a>
+<p style="margin: 8px 0 0">Somente para maiores de 18 anos. Não garantimos resultados nem ganhos; cada operador é responsável por cumprir a regulamentação do seu mercado.</p>
+</div>
+</div>
+</footer>
+
+<!-- BOTÓN FLOTANTE -->
+<a href="{{waGeneral}}" target="_blank" rel="noopener" aria-label="Fale conosco no WhatsApp" style="position: fixed; right: 20px; bottom: 20px; z-index: 50; background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 22px 14px 18px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(15,23,42,0.18)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>WhatsApp</a>
+</div>
+</div>
+</template>
+<script src="/assets/app-pt-api.js" defer></script>
+</body>
+</html>

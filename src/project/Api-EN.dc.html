@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Games API — ProGaming Solutions</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#0369A1}a:hover{color:#075985}
+.pg-root>*:not(.pg-bg){position:relative;z-index:1}
+.pg-orb{position:absolute;border-radius:50%;filter:blur(30px);will-change:transform}
+.pg-o1{animation:pgDrift 24s ease-in-out infinite}
+.pg-o2{animation:pgDrift2 30s ease-in-out infinite}
+.pg-o3{animation:pgDrift 36s ease-in-out infinite reverse}
+.pg-gear{animation:pgSpin 60s linear infinite;transform-origin:50% 50%}
+.pg-gear2{animation:pgSpin 45s linear infinite reverse;transform-origin:50% 50%}
+.pg-phone{animation:pgBob 6s ease-in-out infinite}
+.pg-phone:nth-child(2n){animation-delay:-3s}
+.pg-phone:nth-child(3n){animation-delay:-1.5s}
+.pg-track{animation:pgMarquee 40s linear infinite}
+.pg-marquee:hover .pg-track{animation-play-state:paused}
+.pg-glow{animation:pgPulse 3.2s ease-in-out infinite}
+.pg-shine{background-size:200% auto;animation:pgShine 6s linear infinite}
+@keyframes pgDrift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(90px,70px) scale(1.15)}}
+@keyframes pgDrift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-110px,40px) scale(1.1)}}
+@keyframes pgSpin{to{transform:rotate(360deg)}}
+@keyframes pgBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes pgMarquee{to{transform:translateX(-50%)}}
+@keyframes pgPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}50%{box-shadow:0 0 0 12px rgba(37,211,102,0)}}
+@keyframes pgShine{to{background-position:200% center}}
+.pg-orbit{animation:pgSpin 50s linear infinite}
+.pg-counter{animation:pgSpin 50s linear infinite reverse}
+@media (max-width:560px){.pg-hub{transform:scale(.72);height:380px !important;margin:-40px 0}}
+@property --pga{syntax:'<angle>';initial-value:0deg;inherits:false}
+.pg-aurora{animation:pgSpin 40s linear infinite}
+.pg-dot{position:absolute;border-radius:50%;background:#93A4C3;animation:pgTwinkle 4s ease-in-out infinite}
+.pg-chip{position:absolute;filter:drop-shadow(0 10px 18px rgba(15,23,42,.18));animation:pgFloat 18s ease-in-out infinite}
+.pg-beam{animation:pgBeam 9s ease-in-out infinite}
+.pg-ring{position:relative;isolation:isolate}
+.pg-ring{box-shadow:0 0 70px rgba(59,163,255,.22),0 0 140px rgba(167,139,250,.14)}
+.pg-ring::before{content:"";position:absolute;inset:-2px;border-radius:18px;padding:2px;background:conic-gradient(from var(--pga),#1D4ED8,#6D28D9,#0E7490,#25D366,#1D4ED8);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);pointer-events:none;animation:pgRing 6s linear infinite}
+@keyframes pgRing{to{--pga:360deg}}
+@keyframes pgTwinkle{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:.9;transform:scale(1)}}
+@keyframes pgFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-30px) rotate(180deg)}}
+@keyframes pgBeam{0%,100%{transform:translateX(-30%) rotate(-12deg);opacity:.0}40%,60%{opacity:.5}50%{transform:translateX(30%) rotate(-12deg)}}
+@media (prefers-reduced-motion:reduce){.pg-orb,.pg-gear,.pg-gear2,.pg-phone,.pg-track,.pg-glow,.pg-shine,.pg-aurora,.pg-dot,.pg-chip,.pg-beam,.pg-ring::before,.pg-orbit,.pg-counter{animation:none !important}}
+</style>
+</helmet><!-- estilo B -->
+<div class="pg-root" style="background: #FFFFFF; color: #1E293B; font-family: Manrope, system-ui, sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh; position: relative; overflow: hidden">
+
+
+<!-- NAV -->
+<header style="border-bottom: 1px solid rgba(30,41,90,0.08); position: relative">
+<div style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="Home-EN.dc.html" aria-label="ProGaming Solutions — home" style="display: flex; align-items: center; text-decoration: none">
+<img src="/_blob/2b23518a87fc3b707c335aedfa018f92" alt="ProGaming Solutions" style="height: 52px; width: auto; display: block">
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px 28px; font-size: 15px">
+<a href="Home-EN.dc.html" style="color: #334155; text-decoration: none">Home</a>
+<a href="Plataformas-EN.dc.html" style="color: #334155; text-decoration: none">Platforms</a>
+<a href="Fichas-Claro-EN.dc.html" style="color: #334155; text-decoration: none">Credits</a>
+<a href="Api-EN.dc.html" aria-current="page" style="color: #0B1630; font-weight: 600; text-decoration: none; border-bottom: 2px solid {{accent}}; padding-bottom: 2px">API</a>
+<a href="Blog-EN.dc.html" style="color: #334155; text-decoration: none">Blog</a>
+<a href="Contacto-EN.dc.html" style="color: #334155; text-decoration: none">Contact</a>
+<span class="pg-lang" role="group" aria-label="Idioma / Language" style="display: inline-flex; align-items: center; gap: 2px; border: 1px solid #CBD5E1; border-radius: 8px; padding: 2px"><a href="Api.dc.html" lang="es" style="color: #334155; text-decoration: none; font-weight: 600; font-size: 12px; padding: 4px 8px; border-radius: 6px">ES</a><a href="Api-EN.dc.html" aria-current="true" lang="en" style="color: #FFFFFF; background: {{accent}}; text-decoration: none; font-weight: 700; font-size: 12px; padding: 4px 8px; border-radius: 6px">EN</a><a href="Api-PT.dc.html" lang="pt-BR" style="color: #334155; text-decoration: none; font-weight: 600; font-size: 12px; padding: 4px 8px; border-radius: 6px">PT</a></span>
+</nav>
+<a href="{{waGeneral}}" target="_blank" rel="noopener" style="background: #25D366; color: #04210F; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Message us on WhatsApp</a>
+</div>
+</header>
+
+<!-- HERO API -->
+<section id="inicio" style="max-width: 1248px; margin: 0 auto; padding: 32px 24px 0">
+<div style="background: #F2F6FF; border: 1px solid #DCE6FA; border-radius: 32px; padding: clamp(28px, 5vw, 64px); box-sizing: border-box">
+<p style="margin: 0 0 18px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: {{accent}}; display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: 0 0 28px; height: 3px; border-radius: 3px; background: {{accent}}"></span>Games API</p>
+<h1 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 58px; line-height: 1.05; letter-spacing: -1.4px; color: #0B1630; max-width: 900px">2,000+ games on your platform with <span style="color: {{accent}}">a single integration</span></h1>
+<p style="margin: 22px 0 0; font-size: 19px; color: #475569; max-width: 700px">ProGaming Solutions acts as a central integration point: we connect the catalog of multiple providers so you don't have to build an integration for every game.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px">
+<a class="pg-glow" href="{{waApi}}" target="_blank" rel="noopener" style="background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 999px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>I want to integrate the API</a>
+<a href="#proveedores" style="border: 1px solid #CBD5E1; color: #1E293B; text-decoration: none; font-weight: 600; padding: 15px 26px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">See providers</a>
+</div>
+</div>
+</section>
+
+<!-- PROVEEDORES -->
+<section id="proveedores" style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 0">
+<p style="margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: {{accent}}; display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex: 0 0 28px; height: 3px; border-radius: 3px; background: {{accent}}"></span>Providers</p>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.1; letter-spacing: -1.2px; color: #0B1630; max-width: 760px">The most played providers, in one place</h2>
+<p style="margin: 14px 0 0; font-size: 17px; color: #475569; max-width: 680px">Slots, live casino, crash games and more from the market's leading studios.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; margin-top: 36px">
+<sc-for list="{{provs}}" as="pv" hint-placeholder-count="23">
+<div style="height: 84px; background: #0B1528; border: 1px solid #E2E8F0; border-radius: 14px; padding: 12px 16px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<sc-if value="{{pv.isImg}}" hint-placeholder-val="{{ true }}"><img src="{{pv.logo}}" alt="{{pv.name}}" loading="lazy" style="max-height: 46px; max-width: 100%; width: auto; display: block"></sc-if>
+<sc-if value="{{pv.isText}}" hint-placeholder-val="{{ false }}"><span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: 0.3px; color: #F8FAFC">{{pv.name}}</span></sc-if>
+</div>
+</sc-for>
+</div>
+<p style="margin: 16px 0 0; font-size: 13px; color: #5B6B85">Availability of each provider depends on the platform and the commercial agreement.</p>
+</section>
+
+<!-- CONTENIDO API -->
+<section id="modelos" style="max-width: 1200px; margin: 0 auto; padding: 64px 24px 0">
+<div style="background: rgba(255,255,255,0.92); border: 1px solid #E2E8F0; border-radius: 24px; padding: clamp(28px, 5vw, 56px); box-sizing: border-box">
+<h2 style="margin: 0 0 24px; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 34px; line-height: 1.15; color: #0B1630">How it works</h2>
+<!-- API de proveedores -->
+
+<div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px">
+<sc-for list="{{flow}}" as="f" hint-placeholder-count="5">
+<div style="{{f.style}}"><div style="font-size: 12px; opacity: 0.8">{{f.n}}</div><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px">{{f.label}}</div></div>
+<sc-if value="{{f.arrow}}" hint-placeholder-val="{{ true }}"><span aria-hidden="true" style="color: {{accent}}; font-size: 20px">→</span></sc-if>
+</sc-for>
+</div>
+<!-- Datos clave -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 32px">
+<sc-for list="{{apiStats}}" as="k" hint-placeholder-count="3">
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px"><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 34px; line-height: 1.1; color: {{accent}}">{{k.big}}</div><div style="margin-top: 6px; font-weight: 600; color: #0B1630">{{k.t}}</div><div style="margin-top: 2px; font-size: 14px; color: #526079">{{k.d}}</div></div>
+</sc-for>
+</div>
+
+<!-- Grupos de jugadores -->
+<div style="margin-top: 32px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px 24px">
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"></path></svg>
+<div style="flex: 1 1 400px; min-width: 0"><div style="font-weight: 600; color: #0B1630">Player groups with their own tracking</div><div style="font-size: 15px; color: #526079">Split your players into groups with unique identifiers and track each group's revenue separately: ideal for agents, distributors or different brands.</div></div>
+</div>
+
+<h3 style="margin: 40px 0 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; color: #0B1630">What the API manages</h3>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 18px">
+<sc-for list="{{provCaps}}" as="c" hint-placeholder-count="8">
+<div style="background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 14px; padding: 18px"><div style="font-weight: 600; color: #0B1630">{{c.t}}</div><div style="margin-top: 4px; font-size: 14px; color: #526079">{{c.d}}</div></div>
+</sc-for>
+</div>
+<p style="margin: 18px 0 0; font-size: 13px; color: #5B6B85">Available features depend on each provider's capabilities.</p>
+<!-- Pasos -->
+<h3 style="margin: 40px 0 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 24px; color: #0B1630">How integration works</h3>
+<ol style="margin: 18px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px">
+<sc-for list="{{apiSteps}}" as="st" hint-placeholder-count="4">
+<li style="position: relative; background: #F4F7FB; border: 1px solid #E2E8F0; border-radius: 16px; padding: 22px"><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 32px; line-height: 1; color: {{accent}}">{{st.n}}</div><div style="margin-top: 12px; font-weight: 600; color: #0B1630">{{st.t}}</div><div style="margin-top: 4px; font-size: 14px; color: #526079">{{st.d}}</div></li>
+</sc-for>
+</ol>
+<p style="margin: 18px 0 0; font-size: 14px; color: #5B6B85">Technical requirements: access to your platform's backend, JSON or XML communication and secure data exchange. We support you from integration through maintenance.</p>
+
+</div>
+
+</div>
+</section>
+
+<!-- AUTOMATIZACIONES (enlace) -->
+<section style="max-width: 1200px; margin: 0 auto; padding: 40px 24px 0">
+<div style="border: 1px solid {{accent}}; border-radius: 20px; padding: 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; box-sizing: border-box">
+<div style="flex: 1 1 480px; min-width: 0"><h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; color: #0B1630">Looking to automate with chatbots?</h2><p style="margin: 8px 0 0; font-size: 16px; color: #475569">We also have an API for your admin panel: create users and load balance from chatbots, Zapier, Make or n8n.</p></div>
+<a href="Plataformas-EN.dc.html#automatizaciones" style="color: #0B1630; text-decoration: none; font-weight: 600; border: 1px solid #CBD5E1; border-radius: 999px; padding: 13px 18px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">See the panel API <span aria-hidden="true" style="color: {{accent}}">→</span></a>
+</div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" style="max-width: 1248px; margin: 0 auto; padding: 104px 24px 104px">
+<div style="background: #F2F6FF; border: 1px solid #DCE6FA; border-radius: 32px; padding: clamp(28px, 5vw, 64px); box-sizing: border-box">
+<div style="background: rgba(255,255,255,0.92); border: 1px solid #E2E8F0; border-radius: 24px; padding: clamp(28px, 5vw, 56px); text-align: center; box-sizing: border-box">
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 40px; line-height: 1.1; color: #0B1630">Let's talk about your integration</h2>
+<p style="margin: 14px auto 0; font-size: 17px; color: #475569; max-width: 620px">Tell us which platform you use and which providers you want to add. We'll reply on WhatsApp with a proposal.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 28px">
+<a href="{{waApi}}" target="_blank" rel="noopener" style="background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 999px; min-height: 52px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Message us on WhatsApp</a>
+</div>
+<p style="margin: 18px 0 0; font-size: 15px; color: #526079">{{waDisplay}} · @progamingsolutions</p>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid rgba(30,41,90,0.08); background: #F8FAFC">
+<div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 28px; font-size: 14px; color: #5B6B85">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px">
+<img src="/_blob/2b23518a87fc3b707c335aedfa018f92" alt="ProGaming Solutions" style="height: 40px; width: auto; align-self: flex-start">
+<span>High-performance technology for gaming operators: fast, secure and limitless solutions.</span>
+<span>© 2026 ProGaming Solutions</span>
+</div>
+<nav aria-label="Pages" style="flex: 0 1 240px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600; color: #0B1630">Pages</span>
+<a href="Home-EN.dc.html" style="color: #334155; text-decoration: none">Home</a>
+<a href="Plataformas-EN.dc.html" style="color: #334155; text-decoration: none">Custom platforms</a>
+<a href="Fichas-Claro-EN.dc.html" style="color: #334155; text-decoration: none">Credit sales</a>
+<a href="Api-EN.dc.html" style="color: #334155; text-decoration: none">Games API</a>
+<a href="Blog-EN.dc.html" style="color: #334155; text-decoration: none">News & blog</a>
+<a href="Contacto-EN.dc.html" style="color: #334155; text-decoration: none">Contact</a>
+</nav>
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600; color: #0B1630">Contact</span>
+<a href="{{waGeneral}}" target="_blank" rel="noopener" style="color: #334155; text-decoration: none">WhatsApp {{waDisplay}}</a>
+<span>WhatsApp username: @progamingsolutions</span>
+<a href="https://t.me/progamingsolutions" target="_blank" rel="noopener" style="color: #334155; text-decoration: none">Telegram @progamingsolutions</a>
+<a href="mailto:progamingsolutions@gmail.com" style="color: #334155; text-decoration: none">progamingsolutions@gmail.com</a>
+<a href="mailto:iglatamsarah@gmail.com" style="color: #334155; text-decoration: none">iglatamsarah@gmail.com</a>
+<p style="margin: 8px 0 0">18+ only. We do not guarantee results or earnings; each operator is responsible for complying with the regulations of its market.</p>
+</div>
+</div>
+</footer>
+
+<!-- BOTÓN FLOTANTE -->
+<a href="{{waGeneral}}" target="_blank" rel="noopener" aria-label="Message us on WhatsApp" style="position: fixed; right: 20px; bottom: 20px; z-index: 50; background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 22px 14px 18px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(15,23,42,0.18)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>WhatsApp</a>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"whatsapp":{"editor":"text","default":"573205519656","section":"WhatsApp"},"accent":{"editor":"color","default":"#1D4ED8","options":["#1D4ED8","#0E7490","#6D28D9","#047857"]},"$preview":{"width":1440,"height":5000}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var accent = this.props.accent ?? '#1D4ED8';
+    var wa = String(this.props.whatsapp ?? '573205519656').replace(/\D/g, '');
+    var link = function (t) { return 'https://wa.me/' + wa + '?text=' + encodeURIComponent(t); };
+    var flowLabels = ['Provider', 'API', 'ProGaming', 'Your platform', 'Player'];
+    var flow = flowLabels.map(function (l, i) {
+      var hl = i === 2;
+      return { n: '0' + (i + 1), label: l, arrow: i < flowLabels.length - 1,
+        style: 'flex: 1 1 140px; border-radius: 12px; padding: 16px; text-align: center; ' + (hl ? 'background: ' + accent + '; color: #FFFFFF;' : 'border: 1px solid #CBD5E1; color: #0B1630;') };
+    });
+    var provCaps = [
+      { t: 'Game catalog', d: 'Adding and updating games from different providers.' },
+      { t: 'Player authentication', d: 'Connection between the player account and the provider.' },
+      { t: 'Balance & transactions', d: 'Validation of bets, wins, loads and movements.' },
+      { t: 'Game sessions', d: 'Creating and managing player sessions.' },
+      { t: 'History & reports', d: 'Information on completed operations.' },
+      { t: 'Bonuses & promotions', d: 'Promotional features when the provider supports them.' },
+      { t: 'Automatic sync', d: 'Game availability always up to date.' },
+      { t: 'Centralized management', d: 'All providers from a single panel.' }
+    ];
+    var apiStats = [
+      { big: '2,000+', t: 'Games available', d: 'Slots, roulette, video poker and live casino.' },
+      { big: '1', t: 'Single integration', d: 'Multiple providers from one single point.' },
+      { big: 'Auto', t: 'Games always up to date', d: 'New titles and updates arrive automatically.' }
+    ];
+    var provs = [
+      { name: 'Evolution', logo: '', text: true },
+      { name: 'Pragmatic Play', logo: '', text: true },
+      { name: 'NetEnt', logo: '/_blob/d48e454e831a9ea9adddaf46ab63687c', text: false },
+      { name: 'PG Soft', logo: '/_blob/a6cdbbbb175dc39a5abc0d93fa1e799a', text: false },
+      { name: 'Microgaming', logo: '/_blob/75151d948b93c4cec149ded05425df07', text: false },
+      { name: 'Aristocrat', logo: '/_blob/7a6ba0ccbddb012eaa75f37aedf8e786', text: false },
+      { name: 'Novomatic', logo: '/_blob/5db9c77a4cf4440d099b05c76b7dc851', text: false },
+      { name: 'IGT', logo: '/_blob/d8b3874c3023c5a4bdc3d700e2bd02c2', text: false },
+      { name: 'Scientific Games', logo: '/_blob/f9bf01107510aeed815a3c57349f8b9d', text: false },
+      { name: 'EGT Interactive', logo: '/_blob/aa1304a9241fc94cf1d6803e58257931', text: false },
+      { name: 'EGT Digital', logo: '/_blob/3ddd285ab816a666b8b7ce4bf59d268d', text: false },
+      { name: 'Spribe', logo: '/_blob/741d69d56998590b9514d3b38d78e121', text: false },
+      { name: 'Habanero', logo: '/_blob/ab908f4230d60a611f7a9fcd83fecc14', text: false },
+      { name: 'RubyPlay', logo: '/_blob/c876213994f7788f42286b71941c1efd', text: false },
+      { name: 'Booming Games', logo: '/_blob/6e9f4f37226efa250afb23f65a0ef1be', text: false },
+      { name: 'ELK Studios', logo: '/_blob/eca9c30caafe4d823bf3a6b31e6d5fe5', text: false },
+      { name: 'JILI', logo: '/_blob/676dce19cce9d466812d9cefab7efdd8', text: false },
+      { name: 'Amatic', logo: '/_blob/a72d7feb18c5bf185e7820aa07347109', text: false },
+      { name: 'Inbet Games', logo: '/_blob/c4cf19689e21ff051fb0ba98bd73e192', text: false },
+      { name: 'Igrosoft', logo: '/_blob/f289495f93343bc3af287948b3ff94a9', text: false },
+      { name: 'Apex', logo: '/_blob/754bf550eb39ec1183a4067beabb8d7c', text: false },
+      { name: 'DLV', logo: '/_blob/7083ac2364acf6b3358c8a9adc47c4d4', text: false },
+      { name: 'Fire Kirin', logo: '/_blob/5a0df4c04c3bff09204ba1a8b628deed', text: false }
+    ].map(function (p) { return { name: p.name, logo: p.logo, isText: p.text, isImg: !p.text }; });
+    var apiSteps = [
+      { n: '01', t: 'Choose providers', d: 'Together we define the providers and games you want to add.' },
+      { n: '02', t: 'Implementation', d: 'We connect your platform to our API together with your team.' },
+      { n: '03', t: 'Testing & tuning', d: 'We validate balances, sessions and bets before going live.' },
+      { n: '04', t: 'Ongoing maintenance', d: 'Updates, new games and continuous support.' }
+    ];
+    return {
+      accent: accent, flow: flow, provCaps: provCaps, apiStats: apiStats, provs: provs, apiSteps: apiSteps,
+      waGeneral: link('Hi, I\'d like information about ProGaming Solutions\' services.'),
+      waApi: link('Hi, I\'d like information to integrate the ProGaming Solutions games API.'),
+      waDisplay: '+' + wa.slice(0, 2) + ' ' + wa.slice(2, 5) + ' ' + wa.slice(5, 8) + ' ' + wa.slice(8)
+    };
+  }
+}
+</script>
+</body>
+</html>

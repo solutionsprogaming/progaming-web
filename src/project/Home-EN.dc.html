@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ProGaming Solutions — Home</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#0369A1}a:hover{color:#075985}
+.pg-root>*:not(.pg-bg){position:relative;z-index:1}
+.pg-orb{position:absolute;border-radius:50%;filter:blur(30px);will-change:transform}
+.pg-o1{animation:pgDrift 24s ease-in-out infinite}
+.pg-o2{animation:pgDrift2 30s ease-in-out infinite}
+.pg-o3{animation:pgDrift 36s ease-in-out infinite reverse}
+.pg-gear{animation:pgSpin 60s linear infinite;transform-origin:50% 50%}
+.pg-gear2{animation:pgSpin 45s linear infinite reverse;transform-origin:50% 50%}
+.pg-phone{animation:pgBob 6s ease-in-out infinite}
+.pg-phone:nth-child(2n){animation-delay:-3s}
+.pg-phone:nth-child(3n){animation-delay:-1.5s}
+.pg-track{animation:pgMarquee 40s linear infinite}
+.pg-marquee:hover .pg-track{animation-play-state:paused}
+.pg-glow{animation:pgPulse 3.2s ease-in-out infinite}
+.pg-shine{background-size:200% auto;animation:pgShine 6s linear infinite}
+@keyframes pgDrift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(90px,70px) scale(1.15)}}
+@keyframes pgDrift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-110px,40px) scale(1.1)}}
+@keyframes pgSpin{to{transform:rotate(360deg)}}
+@keyframes pgBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes pgMarquee{to{transform:translateX(-50%)}}
+@keyframes pgPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.45)}50%{box-shadow:0 0 0 12px rgba(37,211,102,0)}}
+@keyframes pgShine{to{background-position:200% center}}
+.pg-orbit{animation:pgSpin 50s linear infinite}
+.pg-counter{animation:pgSpin 50s linear infinite reverse}
+@media (max-width:560px){.pg-hub{transform:scale(.72);height:380px !important;margin:-40px 0}}
+@property --pga{syntax:'<angle>';initial-value:0deg;inherits:false}
+.pg-aurora{animation:pgSpin 40s linear infinite}
+.pg-dot{position:absolute;border-radius:50%;background:#93A4C3;animation:pgTwinkle 4s ease-in-out infinite}
+.pg-chip{position:absolute;filter:drop-shadow(0 10px 18px rgba(15,23,42,.18));animation:pgFloat 18s ease-in-out infinite}
+.pg-beam{animation:pgBeam 9s ease-in-out infinite}
+.pg-ring{position:relative;isolation:isolate}
+.pg-ring{box-shadow:0 0 70px rgba(59,163,255,.22),0 0 140px rgba(167,139,250,.14)}
+.pg-ring::before{content:"";position:absolute;inset:-2px;border-radius:18px;padding:2px;background:conic-gradient(from var(--pga),#1D4ED8,#6D28D9,#0E7490,#25D366,#1D4ED8);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#000 0 0) content-box exclude,linear-gradient(#000 0 0);pointer-events:none;animation:pgRing 6s linear infinite}
+@keyframes pgRing{to{--pga:360deg}}
+@keyframes pgTwinkle{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:.9;transform:scale(1)}}
+@keyframes pgFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-30px) rotate(180deg)}}
+@keyframes pgBeam{0%,100%{transform:translateX(-30%) rotate(-12deg);opacity:.0}40%,60%{opacity:.5}50%{transform:translateX(30%) rotate(-12deg)}}
+@media (prefers-reduced-motion:reduce){.pg-orb,.pg-gear,.pg-gear2,.pg-phone,.pg-track,.pg-glow,.pg-shine,.pg-aurora,.pg-dot,.pg-chip,.pg-beam,.pg-ring::before,.pg-orbit,.pg-counter{animation:none !important}}
+@media (max-width:560px){.pg-badge{display:none}.pg-svc-img{flex-basis:100% !important;min-height:170px !important}}
+</style>
+</helmet><!-- estilo B -->
+<div class="pg-root" style="background: #FFFFFF; color: #1E293B; font-family: Manrope, system-ui, sans-serif; font-size: 16px; line-height: 1.6; min-height: 100vh; position: relative; overflow: hidden">
+
+
+<!-- NAV -->
+<header style="border-bottom: 1px solid rgba(30,41,90,0.08); position: relative">
+<div style="max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<a href="Home-EN.dc.html" aria-label="ProGaming Solutions — home" style="display: flex; align-items: center; text-decoration: none">
+<img src="/_blob/2b23518a87fc3b707c335aedfa018f92" alt="ProGaming Solutions" style="height: 52px; width: auto; display: block">
+</a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px 28px; font-size: 15px">
+<a href="Home-EN.dc.html" aria-current="page" style="color: #0B1630; font-weight: 600; text-decoration: none; border-bottom: 2px solid {{accent}}; padding-bottom: 2px">Home</a>
+<a href="Plataformas-EN.dc.html" style="color: #334155; text-decoration: none">Platforms</a>
+<a href="Fichas-Claro-EN.dc.html" style="color: #334155; text-decoration: none">Credits</a>
+<a href="Api-EN.dc.html" style="color: #334155; text-decoration: none">API</a>
+<a href="Blog-EN.dc.html" style="color: #334155; text-decoration: none">Blog</a>
+<a href="Contacto-EN.dc.html" style="color: #334155; text-decoration: none">Contact</a>
+
+<span class="pg-lang" role="group" aria-label="Idioma / Language" style="display: inline-flex; align-items: center; gap: 2px; border: 1px solid #CBD5E1; border-radius: 8px; padding: 2px"><a href="Home.dc.html" lang="es" style="color: #334155; text-decoration: none; font-weight: 600; font-size: 12px; padding: 4px 8px; border-radius: 6px">ES</a><a href="Home-EN.dc.html" aria-current="true" lang="en" style="color: #FFFFFF; background: {{accent}}; text-decoration: none; font-weight: 700; font-size: 12px; padding: 4px 8px; border-radius: 6px">EN</a><a href="Home-PT.dc.html" lang="pt-BR" style="color: #334155; text-decoration: none; font-weight: 600; font-size: 12px; padding: 4px 8px; border-radius: 6px">PT</a></span>
+</nav>
+<a href="{{waGeneral}}" target="_blank" rel="noopener" style="background: #25D366; color: #04210F; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Message us on WhatsApp</a>
+</div>
+</header>
+
+
+<!-- HERO -->
+<section id="inicio" style="max-width: 1248px; margin: 0 auto; padding: 32px 24px 0">
+<div style="background: #F2F6FF; border: 1px solid #DCE6FA; border-radius: 32px; padding: clamp(28px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; gap: 48px; overflow: hidden">
+<div style="flex: 1 1 480px; min-width: 0">
+<p style="margin: 0 0 14px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: {{accent}}; display: inline-flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 28px; height: 3px; border-radius: 3px; background: {{accent}}"></span>iGaming technology for operators, agents and cashiers</p>
+<h1 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 58px; line-height: 1.06; letter-spacing: -2px; color: #0B1630">Everything your gaming operation needs, <span style="color: {{accent}}">in one place</span></h1>
+<p style="margin: 24px 0 0; font-size: 19px; color: #475569; max-width: 560px">Custom platforms with your brand, credit sales so you can operate today, API integrations with multiple providers and your own chat so you never lose your players.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px">
+<a class="pg-glow" href="{{waGeneral}}" target="_blank" rel="noopener" style="background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 999px; min-height: 54px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Let's talk on WhatsApp</a>
+<a href="#servicios" style="background: #FFFFFF; border: 1px solid #CBD5E1; color: #0B1630; text-decoration: none; font-weight: 700; padding: 15px 26px; border-radius: 999px; min-height: 54px; box-sizing: border-box; display: inline-flex; align-items: center">See services</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 20px; margin-top: 36px; max-width: 480px; font-size: 14px; font-weight: 600; color: #334155">
+<span style="display: flex; gap: 8px; align-items: center"><span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 6px; background: {{accent}}; color: #FFFFFF; font-size: 12px; display: inline-flex; align-items: center; justify-content: center">✓</span>Multi-level panel</span>
+<span style="display: flex; gap: 8px; align-items: center"><span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 6px; background: {{accent}}; color: #FFFFFF; font-size: 12px; display: inline-flex; align-items: center; justify-content: center">✓</span>Multi-language & multi-currency</span>
+<span style="display: flex; gap: 8px; align-items: center"><span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 6px; background: {{accent}}; color: #FFFFFF; font-size: 12px; display: inline-flex; align-items: center; justify-content: center">✓</span>Infraestructura cloud</span>
+<span style="display: flex; gap: 8px; align-items: center"><span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 6px; background: {{accent}}; color: #FFFFFF; font-size: 12px; display: inline-flex; align-items: center; justify-content: center">✓</span>24/7 support</span>
+</div>
+</div>
+<!-- Vitrina de plataformas -->
+<div class="pg-hub" aria-hidden="true" style="flex: 1 1 420px; min-width: 0; height: 500px; position: relative">
+<div style="position: absolute; left: 6%; top: 60px; transform: rotate(-7deg)"><div class="pg-phone" style="width: 190px; background: #FFFFFF; border: 1px solid #DCE6FA; border-radius: 30px; padding: 7px; box-shadow: 0 30px 60px rgba(15,23,42,0.16)"><div style="height: 380px; border-radius: 24px; overflow: hidden; background: #0B1528"><img src="/_blob/d8f7c6db7c2d508eb963d555deaf3c16" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></div></div></div>
+<div style="position: absolute; right: 4%; top: 30px; transform: rotate(6deg)"><div class="pg-phone" style="width: 190px; background: #FFFFFF; border: 1px solid #DCE6FA; border-radius: 30px; padding: 7px; box-shadow: 0 30px 60px rgba(15,23,42,0.16)"><div style="height: 380px; border-radius: 24px; overflow: hidden; background: #0B1528"><img src="/_blob/0a804136a79386d1481f2b8ffae71105" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></div></div></div>
+<div style="position: absolute; left: 50%; top: 0; margin-left: -105px; z-index: 2"><div class="pg-phone" style="width: 210px; background: #FFFFFF; border: 1px solid #DCE6FA; border-radius: 32px; padding: 8px; box-shadow: 0 40px 80px rgba(15,23,42,0.22)"><div style="height: 420px; border-radius: 25px; overflow: hidden; background: #0B1528"><img src="/_blob/ccbb70115ac8056dd80927d1c7ca619b" alt="" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></div></div></div>
+<div class="pg-badge" style="position: absolute; left: 0; bottom: 28px; z-index: 3; background: #FFFFFF; border: 1px solid #DCE6FA; border-radius: 16px; padding: 12px 16px; box-shadow: 0 16px 40px rgba(15,23,42,0.12); display: flex; align-items: center; gap: 12px"><span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; color: {{accent}}">1 week</span><span style="font-size: 13px; line-height: 1.3; color: #475569">your platform<br>ready to operate</span></div>
+<div class="pg-badge" style="position: absolute; right: 0; bottom: 70px; z-index: 3; background: #FFFFFF; border: 1px solid #DCE6FA; border-radius: 16px; padding: 12px 16px; box-shadow: 0 16px 40px rgba(15,23,42,0.12); display: flex; align-items: center; gap: 12px"><span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 26px; color: #6D28D9">2,000+</span><span style="font-size: 13px; line-height: 1.3; color: #475569">games with<br>one integration</span></div>
+</div>
+</div>
+</section>
+
+<!-- LOGOS EN MOVIMIENTO -->
+<div style="max-width: 1200px; margin: 0 auto; padding: 48px 24px 0">
+<p style="margin: 0 0 18px; font-size: 13px; font-weight: 600; color: #5B6B85">Platforms already running on our technology</p>
+<div class="pg-marquee" style="overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)">
+<div class="pg-track" style="display: flex; align-items: center; gap: 14px; width: max-content">
+<sc-for list="{{marquee}}" as="m" hint-placeholder-count="22">
+<span style="flex: 0 0 auto; height: 60px; padding: 0 20px; background: #0B1528; border-radius: 999px; display: inline-flex; align-items: center"><img src="{{m.logo}}" alt="{{m.alt}}" style="height: 34px; width: auto; display: block"></span>
+</sc-for>
+</div>
+</div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios" style="max-width: 1200px; margin: 0 auto; padding: 112px 24px 0">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px">
+<div style="flex: 1 1 520px; min-width: 0"><p style="margin: 0 0 14px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: {{accent}}; display: inline-flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 28px; height: 3px; border-radius: 3px; background: {{accent}}"></span>Services</p>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.12; letter-spacing: -1.2px; color: #0B1630; max-width: 720px">Choose how you want to grow in the online gaming business</h2></div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); gap: 20px; margin-top: 44px">
+<sc-for list="{{services}}" as="s" hint-placeholder-count="4">
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 10px; display: flex; flex-wrap: wrap; gap: 0">
+<div class="pg-svc-img" style="flex: 0 0 180px; min-height: 200px; border-radius: 18px; position: relative; overflow: hidden; background: {{s.bg}}">
+<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position: absolute; left: 18px; top: 18px"><path d="{{s.icon}}"></path></svg>
+<sc-if value="{{s.hasImg}}" hint-placeholder-val="{{ true }}">
+<img src="{{s.img}}" alt="" style="position: absolute; right: -18px; bottom: -40px; width: 120px; border-radius: 16px; border: 5px solid #FFFFFF; box-shadow: 0 10px 30px rgba(0,0,0,0.3); display: block; transform: rotate(-8deg)">
+</sc-if>
+</div>
+<div style="flex: 1 1 240px; min-width: 0; padding: 20px 20px 18px 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #5B6B85; background: #F1F5F9; border-radius: 999px; padding: 4px 10px">{{s.tag}}</span>
+<h3 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.4px; color: #0B1630">{{s.title}}</h3>
+<p style="margin: 0; font-size: 15px; color: #526079; flex: 1">{{s.text}}</p>
+<a href="{{s.href}}" style="align-self: flex-start; color: {{accent}}; text-decoration: none; font-weight: 700; font-size: 15px; min-height: 44px; display: inline-flex; align-items: center; gap: 8px">{{s.cta}} <span aria-hidden="true">→</span></a>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- API -->
+<section id="api" style="margin-top: 112px; background: #0B1630; color: #E2E8F0">
+<div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px">
+<div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-end; justify-content: space-between">
+<div style="flex: 1 1 560px; min-width: 0">
+<p style="margin: 0 0 14px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #7CC4FF; display: inline-flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 28px; height: 3px; border-radius: 3px; background: #7CC4FF"></span>Games API</p>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.1; letter-spacing: -1.2px; color: #FFFFFF; max-width: 760px">2,000+ games with a single integration</h2>
+<p style="margin: 16px 0 0; font-size: 18px; color: #AEBCD6; max-width: 680px">We connect the catalog of the most played providers to your platform: slots, live casino, crash games and more.</p>
+</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 44px; border-top: 1px solid #24385F">
+<sc-for list="{{apiStats}}" as="k" hint-placeholder-count="3">
+<div style="padding: 26px 24px 0 0"><div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 46px; line-height: 1; color: #FFFFFF">{{k.big}}</div><div style="margin-top: 10px; font-weight: 700; color: #FFFFFF">{{k.t}}</div><div style="margin-top: 4px; font-size: 14px; color: #9AABC7">{{k.d}}</div></div>
+</sc-for>
+</div>
+<div class="pg-marquee" aria-label="Available providers" style="overflow: hidden; margin-top: 44px; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent)">
+<div class="pg-track" style="display: flex; align-items: center; gap: 12px; width: max-content; animation-direction: reverse">
+<sc-for list="{{provLoop}}" as="pv" hint-placeholder-count="46">
+<div style="flex: 0 0 auto; height: 64px; min-width: 130px; background: #13213F; border: 1px solid #24385F; border-radius: 14px; padding: 0 18px; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+<sc-if value="{{pv.isImg}}" hint-placeholder-val="{{ true }}"><img src="{{pv.logo}}" alt="{{pv.name}}" style="max-height: 36px; width: auto; display: block"></sc-if>
+<sc-if value="{{pv.isText}}" hint-placeholder-val="{{ false }}"><span style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 17px; color: #F8FAFC; white-space: nowrap">{{pv.name}}</span></sc-if>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px">
+<a href="Api-EN.dc.html" style="background: #FFFFFF; color: #0B1630; text-decoration: none; font-weight: 700; font-size: 16px; padding: 15px 24px; border-radius: 999px; min-height: 50px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 8px">Everything about the API <span aria-hidden="true">→</span></a>
+<a href="{{waApi}}" target="_blank" rel="noopener" style="background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 16px; padding: 15px 24px; border-radius: 999px; min-height: 50px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>I want to integrate the API</a>
+</div>
+</div>
+</section>
+
+<!-- EJEMPLOS -->
+<section id="ejemplos" style="padding: 112px 0 0">
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 24px">
+<p style="margin: 0 0 14px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: {{accent}}; display: inline-flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 28px; height: 3px; border-radius: 3px; background: {{accent}}"></span>Platforms</p>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 42px; line-height: 1.12; letter-spacing: -1.2px; color: #0B1630; max-width: 760px">This is how platforms running on our technology look</h2>
+</div>
+<div style="margin-top: 36px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding: 16px 0 32px">
+<div style="display: flex; gap: 20px; padding: 0 max(24px, calc((100% - 1200px) / 2)); width: max-content">
+<sc-for list="{{examples}}" as="e" hint-placeholder-count="11">
+<div style="scroll-snap-align: center; width: 220px; flex: 0 0 auto; background: #F2F6FF; border: 1px solid #DCE6FA; border-radius: 24px; padding: 14px 14px 16px; display: flex; flex-direction: column; align-items: center; gap: 14px">
+<div style="width: 100%; height: 380px; border-radius: 16px; overflow: hidden; background: #0B1528; box-shadow: 0 16px 34px rgba(15,23,42,0.14)"><img src="{{e.preview}}" alt="{{e.name}} screen on a phone" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block"></div>
+<div style="height: 52px; width: 100%; background: #0B1528; border-radius: 12px; display: flex; align-items: center; justify-content: center"><img src="{{e.logo}}" alt="{{e.name}}" style="max-height: 32px; max-width: 150px; width: auto; display: block"></div>
+</div>
+</sc-for>
+</div>
+</div>
+</section>
+
+<!-- POR QUÉ -->
+<section style="max-width: 1200px; margin: 0 auto; padding: 80px 24px 0">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); border-top: 2px solid #0B1630">
+<sc-for list="{{whys}}" as="w" hint-placeholder-count="4">
+<div style="padding: 28px 24px 8px 0">
+<div style="font-family: 'Sora', sans-serif; font-weight: 700; font-size: 40px; letter-spacing: -1px; color: #0B1630">{{w.big}}</div>
+<div style="margin-top: 8px; font-weight: 700; color: {{accent}}">{{w.t}}</div>
+<p style="margin: 6px 0 0; font-size: 15px; color: #526079">{{w.d}}</p>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" style="max-width: 1248px; margin: 0 auto; padding: 112px 24px 104px">
+<div style="background: #F2F6FF; border: 1px solid #DCE6FA; border-radius: 32px; padding: clamp(28px, 5vw, 56px); display: flex; flex-wrap: wrap; gap: 48px">
+<div style="flex: 1 1 360px; min-width: 0">
+<p style="margin: 0 0 14px; font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: {{accent}}; display: inline-flex; align-items: center; gap: 10px"><span aria-hidden="true" style="width: 28px; height: 3px; border-radius: 3px; background: {{accent}}"></span>Contact</p>
+<h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: 44px; line-height: 1.1; letter-spacing: -0.8px; color: #0B1630">Tell us what you need</h2>
+<p style="margin: 18px 0 0; font-size: 17px; color: #475569">Choose a service and WhatsApp opens with your message ready to send.</p>
+<a href="{{waGeneral}}" target="_blank" rel="noopener" style="margin-top: 28px; display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: #0B1630; font-family: 'Sora', sans-serif; font-weight: 600; font-size: 24px"><span style="width: 48px; height: 48px; border-radius: 50%; background: #25D366; color: #04210F; display: inline-flex; align-items: center; justify-content: center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg></span>{{waDisplay}}</a>
+<p style="margin: 20px 0 0; font-size: 15px; color: #526079">WhatsApp username: @progamingsolutions</p>
+</div>
+<div style="flex: 1 1 480px; min-width: 0; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 24px; padding: 32px; box-shadow: 0 20px 50px rgba(15,23,42,0.08); box-sizing: border-box; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 14px; color: #334155">1. What are you interested in?</span>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px">
+<sc-for list="{{options}}" as="o" hint-placeholder-count="5">
+<button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button>
+</sc-for>
+</div>
+</div>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #334155">2. Your name (optional)<input type="text" value="{{name}}" onChange="{{setName}}" placeholder="E.g. Carlos — North Casino" style="background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 8px; padding: 12px 14px; color: #1E293B; font: inherit; font-size: 15px; min-height: 44px; box-sizing: border-box"></label>
+<div style="background: #FFFFFF; border: 1px dashed #CBD5E1; border-radius: 10px; padding: 14px 16px; font-size: 14px; color: #475569"><span style="display: block; font-size: 12px; color: #5B6B85; margin-bottom: 4px">Message to be sent</span>{{preview}}</div>
+<a href="{{waCustom}}" target="_blank" rel="noopener" style="justify-content: center; background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 18px; padding: 17px 26px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: flex; align-items: center; gap: 10px"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>Open WhatsApp and send</a>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="border-top: 1px solid rgba(30,41,90,0.08); background: #F8FAFC">
+<div style="max-width: 1200px; margin: 0 auto; padding: 40px 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 28px; font-size: 14px; color: #5B6B85">
+<div style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 14px">
+<img src="/_blob/2b23518a87fc3b707c335aedfa018f92" alt="ProGaming Solutions" style="height: 40px; width: auto; align-self: flex-start">
+<span>High-performance technology for gaming operators: fast, secure and limitless solutions.</span>
+<span>© 2026 ProGaming Solutions</span>
+</div>
+<nav aria-label="Pages" style="flex: 0 1 240px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600; color: #0B1630">Pages</span>
+<a href="Home-EN.dc.html" style="color: #334155; text-decoration: none">Home</a>
+<a href="Plataformas-EN.dc.html" style="color: #334155; text-decoration: none">Custom platforms</a>
+<a href="Fichas-Claro-EN.dc.html" style="color: #334155; text-decoration: none">Credit sales</a>
+<a href="Api-EN.dc.html" style="color: #334155; text-decoration: none">Games API</a>
+<a href="Blog-EN.dc.html" style="color: #334155; text-decoration: none">News & blog</a>
+<a href="Contacto-EN.dc.html" style="color: #334155; text-decoration: none">Contact</a>
+</nav>
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 600; color: #0B1630">Contact</span>
+<a href="{{waGeneral}}" target="_blank" rel="noopener" style="color: #334155; text-decoration: none">WhatsApp {{waDisplay}}</a>
+<span>WhatsApp username: @progamingsolutions</span>
+<a href="https://t.me/progamingsolutions" target="_blank" rel="noopener" style="color: #334155; text-decoration: none">Telegram @progamingsolutions</a>
+<a href="mailto:progamingsolutions@gmail.com" style="color: #334155; text-decoration: none">progamingsolutions@gmail.com</a>
+<a href="mailto:iglatamsarah@gmail.com" style="color: #334155; text-decoration: none">iglatamsarah@gmail.com</a>
+<p style="margin: 8px 0 0">18+ only. We do not guarantee results or earnings; each operator is responsible for complying with the regulations of its market.</p>
+</div>
+</div>
+</footer>
+
+
+<!-- BOTÓN FLOTANTE -->
+<a href="{{waGeneral}}" target="_blank" rel="noopener" aria-label="Message us on WhatsApp" style="position: fixed; right: 20px; bottom: 20px; z-index: 50; background: #25D366; color: #04210F; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px 22px 14px 18px; border-radius: 999px; min-height: 56px; box-sizing: border-box; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 10px 30px rgba(15,23,42,0.18)"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z"></path></svg>WhatsApp</a>
+</div>
+</x-dc>
+
+<script type="text/x-dc" data-dc-script data-props='{"whatsapp":{"editor":"text","default":"573205519656","section":"WhatsApp"},"accent":{"editor":"color","default":"#1D4ED8","options":["#1D4ED8","#0E7490","#6D28D9","#047857"]},"$preview":{"width":1440,"height":5600}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { api: 0, interest: 0, name: '' }; }
+  renderVals() {
+    var accent = this.props.accent ?? '#1D4ED8';
+    var wa = String(this.props.whatsapp ?? '573205519656').replace(/\D/g, '');
+    var link = function (t) { return 'https://wa.me/' + wa + '?text=' + encodeURIComponent(t); };
+
+    var R = 220;
+    var orbitData = [['Platforms', '#1D4ED8'], ['Credits', '#0E7490'], ['API', '#6D28D9'], ['Built-in chat', '#25D366'], ['Multi-level panel', '#FBBF24']];
+    var orbit = orbitData.map(function (o, i) {
+      var ang = (i / orbitData.length) * Math.PI * 2 - Math.PI / 2;
+      var x = Math.round(Math.cos(ang) * R), y = Math.round(Math.sin(ang) * R);
+      return { label: o[0], color: o[1], pos: 'position: absolute; left: calc(50% + ' + x + 'px); top: calc(50% + ' + y + 'px); transform: translate(-50%, -50%)' };
+    });
+
+    var plats = [
+      ['Bet30', '/_blob/69bba89601b23de5ee3bbd641925b94d', '/_blob/ccbb70115ac8056dd80927d1c7ca619b'],
+      ['Rey Bet', '/_blob/793c2ae821e33dc1d58d9a1c04c6db4a', '/_blob/0a804136a79386d1481f2b8ffae71105'],
+      ['Casino Zeus', '/_blob/004cb616bcc74396f0dd94687d0c0ffb', '/_blob/d8f7c6db7c2d508eb963d555deaf3c16'],
+      ['Tío Rico Juegos', '/_blob/cbf124a91ba91586f8adf4d129e07303', '/_blob/32ce5755bfcd128dd9fe58626bb65dd4'],
+      ['Ganamos VIP', '/_blob/c5797625acba4717380e13e8f636d9b3', '/_blob/b577096c761f8597cb4a079e9d7c2430'],
+      ['Casino Zeta', '/_blob/881f1b2b6d98046313431805589f5006', '/_blob/13ae23b32ecd68dbccbcc83e110c9210'],
+      ['Celuapuestas', '/_blob/c5739fd8bb95cfe82b57600a58dbe8c0', '/_blob/75f8a6ad05c957dedb579815f3aa97a6'],
+      ['Gana en Casa', '/_blob/8fe427d4056b1c1b6685e8f91ccf59d1', '/_blob/51b463285ac706c9e0bd40d7b8b01fe4'],
+      ['Cash Master', '/_blob/5903b74d0ec1a8536a3f07ac7e2bd527', '/_blob/2a7416ee592c3654a5055af8e45166fd'],
+      ['Ganamos', '/_blob/2f1e68c9151e4812fd369c5272e00c2b', '/_blob/20dfeb265ced439eeb39acde851c987b'],
+      ['Ganá Aquí', '/_blob/7e66c5804ed69441979ab56739d39305', '/_blob/bd1250c957e01846be2de6ccda7ef275']
+    ];
+    var examples = plats.map(function (p) { return { name: p[0], logo: p[1], preview: p[2] }; });
+    var marquee = plats.map(function (p) { return { logo: p[1], alt: p[0] }; }).concat(plats.map(function (p) { return { logo: p[1], alt: '' }; }));
+
+    var services = [
+      { tag: 'Your own brand', title: 'Custom platforms', text: 'Your online casino with your domain, logo and colors, multi-level panel and integrated providers. Ready in 1 week.', cta: 'See platforms', href: 'Plataformas-EN.dc.html', hasImg: true, img: '/_blob/d8f7c6db7c2d508eb963d555deaf3c16', bg: 'linear-gradient(135deg, #1D4ED8, #1D4ED8)', icon: 'M3 4h18v12H3zM8 20h8M12 16v4' },
+      { tag: 'Operate today', title: 'Credit sales', text: 'For agents and cashiers: buy credits on 11 ready platforms and load your players. Pay in USDT or ARS.', cta: 'Buy credits', href: 'Fichas-Claro-EN.dc.html', hasImg: true, img: '/_blob/0a804136a79386d1481f2b8ffae71105', bg: 'linear-gradient(135deg, #0E7490, #0E7490)', icon: 'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7v10M9 9.5h4.5a1.5 1.5 0 0 1 0 3h-3a1.5 1.5 0 0 0 0 3H15' },
+      { tag: 'Integrations', title: 'Games API', text: '2,000+ games from the most played providers —Evolution, Pragmatic Play, PG Soft and more— with a single integration.', cta: 'Explore the API', href: 'Api-EN.dc.html', hasImg: false, img: '', bg: 'linear-gradient(135deg, #5B21B6, #6D28D9)', icon: 'M8 9l-4 3 4 3M16 9l4 3-4 3M14 5l-4 14' },
+      { tag: 'No more relying on WhatsApp', title: 'Built-in chat', text: 'A communication chat inside the platform, so a WhatsApp ban doesn\'t cost you players or sales.', cta: 'See how it works', href: 'Plataformas-EN.dc.html#chat', hasImg: false, img: '', bg: 'linear-gradient(135deg, #15803D, #25D366)', icon: 'M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-6.4A8 8 0 1 1 21 12z' }
+    ];
+
+    var apiLabels = ['Games & providers API', 'Panel API & automations'];
+    var tb = 'border: 0; border-radius: 8px; font: inherit; font-weight: 600; font-size: 15px; padding: 11px 18px; min-height: 44px; cursor: pointer; ';
+    var apiTabs = apiLabels.map((l, i) => ({ label: l, selected: i === this.state.api ? 'true' : 'false', style: tb + (i === this.state.api ? 'background: ' + accent + '; color: #FFFFFF;' : 'background: transparent; color: #334155;'), pick: () => this.setState({ api: i }) }));
+
+    var flowLabels = ['Provider', 'API', 'ProGaming', 'Your platform', 'Player'];
+    var flow = flowLabels.map(function (l, i) {
+      var hl = i === 2;
+      return { n: '0' + (i + 1), label: l, arrow: i < flowLabels.length - 1,
+        style: 'flex: 1 1 140px; border-radius: 12px; padding: 16px; text-align: center; ' + (hl ? 'background: ' + accent + '; color: #FFFFFF;' : 'border: 1px solid #CBD5E1; color: #0B1630;') };
+    });
+    var provCaps = [
+      { t: 'Game catalog', d: 'Adding and updating games from different providers.' },
+      { t: 'Player authentication', d: 'Connection between the player account and the provider.' },
+      { t: 'Balance & transactions', d: 'Validation of bets, wins, loads and movements.' },
+      { t: 'Game sessions', d: 'Creating and managing player sessions.' },
+      { t: 'History & reports', d: 'Information on completed operations.' },
+      { t: 'Bonuses & promotions', d: 'Promotional features when the provider supports them.' },
+      { t: 'Automatic sync', d: 'Game availability always up to date.' },
+      { t: 'Centralized management', d: 'All providers from a single panel.' }
+    ];
+    var panelCaps = [
+      { n: '1', t: 'Create users automatically', d: 'The chatbot signs up the player without your cashier stepping in.' },
+      { n: '2', t: 'Load and withdraw balance', d: 'Credits a user based on what\'s requested in the chat.' },
+      { n: '3', t: 'Connect your tools', d: 'Chatbots, Zapier, Make, n8n or your team\'s own development.' },
+      { n: '4', t: 'Secure token access', d: 'Authentication via API token, ideal for automations.' }
+    ];
+
+    var apiStats = [
+      { big: '2,000+', t: 'Games available', d: 'Slots, roulette, video poker and live casino.' },
+      { big: '1', t: 'Single integration', d: 'Multiple providers from one single point.' },
+      { big: 'Auto', t: 'Games always up to date', d: 'New titles and updates arrive automatically.' }
+    ];
+    var provs = [
+      { name: 'Evolution', logo: '', text: true },
+      { name: 'Pragmatic Play', logo: '', text: true },
+      { name: 'NetEnt', logo: '/_blob/d48e454e831a9ea9adddaf46ab63687c', text: false },
+      { name: 'PG Soft', logo: '/_blob/a6cdbbbb175dc39a5abc0d93fa1e799a', text: false },
+      { name: 'Microgaming', logo: '/_blob/75151d948b93c4cec149ded05425df07', text: false },
+      { name: 'Aristocrat', logo: '/_blob/7a6ba0ccbddb012eaa75f37aedf8e786', text: false },
+      { name: 'Novomatic', logo: '/_blob/5db9c77a4cf4440d099b05c76b7dc851', text: false },
+      { name: 'IGT', logo: '/_blob/d8b3874c3023c5a4bdc3d700e2bd02c2', text: false },
+      { name: 'Scientific Games', logo: '/_blob/f9bf01107510aeed815a3c57349f8b9d', text: false },
+      { name: 'EGT Interactive', logo: '/_blob/aa1304a9241fc94cf1d6803e58257931', text: false },
+      { name: 'EGT Digital', logo: '/_blob/3ddd285ab816a666b8b7ce4bf59d268d', text: false },
+      { name: 'Spribe', logo: '/_blob/741d69d56998590b9514d3b38d78e121', text: false },
+      { name: 'Habanero', logo: '/_blob/ab908f4230d60a611f7a9fcd83fecc14', text: false },
+      { name: 'RubyPlay', logo: '/_blob/c876213994f7788f42286b71941c1efd', text: false },
+      { name: 'Booming Games', logo: '/_blob/6e9f4f37226efa250afb23f65a0ef1be', text: false },
+      { name: 'ELK Studios', logo: '/_blob/eca9c30caafe4d823bf3a6b31e6d5fe5', text: false },
+      { name: 'JILI', logo: '/_blob/676dce19cce9d466812d9cefab7efdd8', text: false },
+      { name: 'Amatic', logo: '/_blob/a72d7feb18c5bf185e7820aa07347109', text: false },
+      { name: 'Inbet Games', logo: '/_blob/c4cf19689e21ff051fb0ba98bd73e192', text: false },
+      { name: 'Igrosoft', logo: '/_blob/f289495f93343bc3af287948b3ff94a9', text: false },
+      { name: 'Apex', logo: '/_blob/754bf550eb39ec1183a4067beabb8d7c', text: false },
+      { name: 'DLV', logo: '/_blob/7083ac2364acf6b3358c8a9adc47c4d4', text: false },
+      { name: 'Fire Kirin', logo: '/_blob/5a0df4c04c3bff09204ba1a8b628deed', text: false }
+    ].map(function (p) { return { name: p.name, logo: p.logo, isText: p.text, isImg: !p.text }; });
+    var provLoop = provs.concat(provs);
+    var whys = [
+      { big: '24/7', t: 'Technical support', d: 'Continuous monitoring and support for you and your team.' },
+      { big: '11', t: 'Platforms running', d: 'Brands already running on our technology.' },
+      { big: '2,000+', t: 'Games via API', d: 'A single integration point for your catalog.' },
+      { big: 'ARS · USDT', t: 'Flexible payments', d: 'Pay for credits in Argentine pesos or USDT.' }
+    ];
+
+    var labels = ['A platform with my brand', 'Buy credits', 'Integrate the API', 'Built-in chat / automations', 'Become a distributor / partner'];
+    var sel = this.state.interest;
+    var nm = (this.state.name || '').trim();
+    var msg = (nm ? 'Hi, I\'m ' + nm + '. ' : 'Hi. ') + 'I\'m interested in: ' + labels[sel] + '. I\'d like more information about ProGaming Solutions.';
+    var ob = 'font: inherit; font-size: 15px; font-weight: 500; text-align: left; padding: 12px 14px; border-radius: 8px; min-height: 48px; cursor: pointer; ';
+    var options = labels.map((l, i) => ({ label: l, pressed: i === sel ? 'true' : 'false', style: ob + (i === sel ? 'background: rgba(37,211,102,0.12); border: 1.5px solid #25D366; color: #0B1630;' : 'background: #FFFFFF; border: 1px solid #CBD5E1; color: #334155;'), pick: () => this.setState({ interest: i }) }));
+
+    return {
+      accent: accent, orbit: orbit, examples: examples, marquee: marquee, services: services,
+      apiTabs: apiTabs, provLoop: provLoop, apiStats: apiStats, apiProv: this.state.api === 0, apiPanel: this.state.api === 1, flow: flow, provCaps: provCaps, panelCaps: panelCaps,
+      whys: whys, options: options, preview: msg, name: this.state.name,
+      setName: (e) => this.setState({ name: e.target.value }),
+      waGeneral: link('Hi, I\'d like information about ProGaming Solutions\' services.'),
+      waApi: link('Hi, I\'d like information to integrate the ProGaming Solutions API.'),
+      waChat: link('Hi, I want the built-in communication chat on my platform so I don\'t depend on WhatsApp.'),
+      waCustom: link(msg),
+      waDisplay: '+' + wa.slice(0, 2) + ' ' + wa.slice(2, 5) + ' ' + wa.slice(5, 8) + ' ' + wa.slice(8)
+    };
+  }
+}
+</script>
+</body>
+</html>
