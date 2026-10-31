@@ -38,6 +38,12 @@ COVERS = {
             '<rect x="40" y="70" width="90" height="100" rx="14" fill="#FFFFFF" stroke="#0E7490" stroke-width="3"/><rect x="56" y="88" width="58" height="10" rx="5" fill="#0E7490"/><rect x="56" y="108" width="40" height="10" rx="5" fill="#67E8F9"/><rect x="56" y="128" width="50" height="10" rx="5" fill="#67E8F9"/>'
             '<rect x="270" y="50" width="90" height="40" rx="10" fill="#FFFFFF" stroke="#0E7490" stroke-width="3"/><rect x="270" y="100" width="90" height="40" rx="10" fill="#FFFFFF" stroke="#0E7490" stroke-width="3"/><rect x="270" y="150" width="90" height="40" rx="10" fill="#FFFFFF" stroke="#0E7490" stroke-width="3"/>'
             '<path d="M130 120H200M200 120V70H270M200 120H270M200 120V170H270" fill="none" stroke="#0E7490" stroke-width="3"/><circle cx="200" cy="120" r="18" fill="#0E7490"/><path d="M193 113l-6 7 6 7M207 113l6 7-6 7" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>'),
+    "fichas": ("#6D28D9", "#F1E9FE",
+               '<ellipse cx="150" cy="178" rx="62" ry="16" fill="#5B21B6"/><rect x="88" y="150" width="124" height="28" fill="#6D28D9"/><ellipse cx="150" cy="150" rx="62" ry="16" fill="#8B5CF6"/>'
+               '<rect x="88" y="122" width="124" height="28" fill="#6D28D9"/><ellipse cx="150" cy="122" rx="62" ry="16" fill="#A78BFA"/><rect x="88" y="94" width="124" height="28" fill="#6D28D9"/><ellipse cx="150" cy="94" rx="62" ry="16" fill="#C4B5FD"/>'
+               '<ellipse cx="150" cy="94" rx="40" ry="9" fill="none" stroke="#FFFFFF" stroke-width="4" stroke-dasharray="10 8"/>'
+               '<rect x="250" y="60" width="96" height="140" rx="16" fill="#FFFFFF" stroke="#6D28D9" stroke-width="3"/><rect x="266" y="80" width="64" height="10" rx="5" fill="#6D28D9"/><rect x="266" y="100" width="44" height="10" rx="5" fill="#C4B5FD"/>'
+               '<rect x="266" y="164" width="64" height="20" rx="10" fill="#25D366"/><path d="M276 132h44M308 122l12 10-12 10" fill="none" stroke="#6D28D9" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'),
     "chat": ("#15803D", "#E7F6EC",
              '<path d="M70 60h150a20 20 0 0 1 20 20v70a20 20 0 0 1-20 20h-90l-40 30v-30h-20a20 20 0 0 1-20-20V80a20 20 0 0 1 20-20z" fill="#FFFFFF" stroke="#15803D" stroke-width="3"/>'
              '<path d="M95 100h100M95 125h70" stroke="#86EFAC" stroke-width="10" stroke-linecap="round"/>'
@@ -46,6 +52,114 @@ COVERS = {
 }
 
 ARTICLES = [
+ {
+  "key": "fichas", "cover": "fichas", "date": "2026-10-30", "minutes": 5, "code": "BLOG-FICHAS", "related_page": "Fichas-Claro",
+  "es": {
+   "slug": "como-vender-fichas-de-casino-online", "cat": "Fichas",
+   "title": "Cómo empezar a vender fichas de casino online como agente o cajero",
+   "desc": "Qué hace un agente o cajero de casino online, cómo empezar a vender fichas paso a paso y los errores que más ventas cuestan.",
+   "excerpt": "El modelo de agentes y cajeros, paso a paso: elegir plataforma, comprar fichas, atender a tus jugadores y crecer sin depender de un solo número.",
+   "wa": "Hola, leí el artículo sobre cómo vender fichas [BLOG-FICHAS]. Quiero empezar como agente o cajero.",
+   "body": """
+<p>En buena parte de Latinoamérica, el juego online funciona con una red de <strong>agentes y cajeros</strong>: personas que compran fichas a la plataforma y las cargan a sus jugadores, a quienes atienden por WhatsApp o Telegram. Es un modelo que permite empezar sin desarrollar nada propio. Estos son los pasos para arrancar bien.</p>
+<h2>Qué hace un cajero y qué hace un agente</h2>
+<ul>
+<li><strong>Cajero:</strong> crea usuarios para sus jugadores, les carga fichas cuando le pagan y les procesa los retiros.</li>
+<li><strong>Agente:</strong> además de atender jugadores, tiene cajeros o subagentes a su cargo y les vende fichas a ellos.</li>
+</ul>
+<p>Muchos empiezan como cajeros y, cuando su cartera crece, pasan a ser agentes.</p>
+<h2>1. Elige la plataforma</h2>
+<p>Tus jugadores van a jugar donde tú los cargues, así que la plataforma es tu producto. Fíjate en que tenga juegos conocidos, que funcione bien en el celular y que el panel de agente sea fácil de usar. En ProGaming Solutions trabajamos con 11 plataformas listas para operar, y te ayudamos a elegir la que mejor encaja con tu público.</p>
+<h2>2. Compra tus primeras fichas</h2>
+<p>Empieza con un monto que puedas mover en pocos días: es mejor recargar seguido que tener fichas quietas. A mayor volumen, mejor precio por ficha. Con nosotros puedes pagar en <strong>pesos argentinos o USDT</strong>, y las fichas se acreditan en tu usuario de agente.</p>
+<h2>3. Arma tu canal de atención</h2>
+<p>La atención rápida es lo que hace que un jugador vuelva a cargar contigo y no con otro. Ten respuestas listas para las preguntas de siempre: cómo cargar, cómo retirar, cuánto tarda. Y no dependas de un solo número: suma un usuario de Telegram como respaldo y, si puedes, un chat dentro de la plataforma.</p>
+<h2>4. Lleva el control de cada movimiento</h2>
+<p>Anota cada carga y cada retiro con fecha, jugador y monto. El panel de agente te muestra el historial, pero tener tu propio registro te evita discusiones y te deja ver qué jugadores son los más activos.</p>
+<h2>5. Paga rápido los retiros</h2>
+<p>Nada genera más confianza que un retiro pagado a tiempo. Un jugador que cobra rápido recomienda a su cajero; uno que espera, se va y cuenta por qué.</p>
+<h2>6. Crece con subagentes y referidos</h2>
+<p>Cuando tengas tu operación ordenada, puedes sumar cajeros a tu cargo y ofrecer un beneficio a los jugadores que te traigan amigos. Así creces sin tener que atender tú cada conversación.</p>
+<h2>Errores que cuestan ventas</h2>
+<ul>
+<li>Trabajar con un solo número de WhatsApp: si lo bloquean, se cortan las cargas.</li>
+<li>Quedarte sin fichas en el horario de más movimiento.</li>
+<li>Prometer ganancias a los jugadores: el juego es entretenimiento y nadie puede garantizar resultados.</li>
+<li>No revisar las reglas de tu país ni la mayoría de edad: el juego es solo para mayores de 18 años, y cada operador es responsable de cumplir la regulación de su mercado.</li>
+</ul>
+<p>Si quieres empezar, escríbenos: te mostramos las plataformas disponibles, te pasamos los precios y creamos tu usuario de agente.</p>
+"""},
+  "en": {
+   "slug": "how-to-sell-online-casino-credits", "cat": "Credits",
+   "title": "How to start selling online casino credits as an agent or cashier",
+   "desc": "What an online casino agent or cashier does, how to start selling credits step by step, and the mistakes that cost the most sales.",
+   "excerpt": "The agent and cashier model, step by step: choose a platform, buy credits, support your players and grow without depending on one number.",
+   "wa": "Hi, I read the article on how to sell credits [BLOG-FICHAS]. I'd like to start as an agent or cashier.",
+   "body": """
+<p>In much of Latin America, online gaming runs on a network of <strong>agents and cashiers</strong>: people who buy credits from the platform and load them for their players, whom they support on WhatsApp or Telegram. It is a model that lets you start without building anything yourself. These are the steps to get off to a good start.</p>
+<h2>What a cashier does and what an agent does</h2>
+<ul>
+<li><strong>Cashier:</strong> creates accounts for their players, loads credits when they pay and processes their withdrawals.</li>
+<li><strong>Agent:</strong> besides supporting players, manages cashiers or sub-agents and sells credits to them.</li>
+</ul>
+<p>Many start as cashiers and become agents once their customer base grows.</p>
+<h2>1. Choose the platform</h2>
+<p>Your players will play wherever you load them, so the platform is your product. Check that it has well-known games, works well on mobile and has an agent panel that is easy to use. At ProGaming Solutions we work with 11 platforms ready to operate, and we help you choose the one that best fits your audience.</p>
+<h2>2. Buy your first credits</h2>
+<p>Start with an amount you can move in a few days: it is better to top up often than to sit on idle credits. The higher the volume, the better the price per credit. With us you can pay in <strong>Argentine pesos or USDT</strong>, and the credits are added to your agent account.</p>
+<h2>3. Set up your support channel</h2>
+<p>Fast support is what makes a player load with you again instead of someone else. Have ready-made answers to the usual questions: how to load, how to withdraw, how long it takes. And don't depend on a single number: add a Telegram username as a backup and, if you can, a chat inside the platform.</p>
+<h2>4. Keep track of every transaction</h2>
+<p>Record every load and every withdrawal with date, player and amount. The agent panel shows the history, but keeping your own record avoids disputes and shows you who your most active players are.</p>
+<h2>5. Pay withdrawals quickly</h2>
+<p>Nothing builds trust like a withdrawal paid on time. A player who gets paid fast recommends their cashier; one who waits leaves and tells others why.</p>
+<h2>6. Grow with sub-agents and referrals</h2>
+<p>Once your operation is in order, you can add cashiers under you and offer a perk to players who bring friends. That way you grow without handling every conversation yourself.</p>
+<h2>Mistakes that cost sales</h2>
+<ul>
+<li>Working with a single WhatsApp number: if it gets blocked, top-ups stop.</li>
+<li>Running out of credits during peak hours.</li>
+<li>Promising players winnings: gaming is entertainment and no one can guarantee results.</li>
+<li>Not checking your country's rules or the legal age: gaming is for adults 18+ only, and each operator is responsible for complying with the regulation of its market.</li>
+</ul>
+<p>If you want to get started, message us: we will show you the available platforms, send you the prices and create your agent account.</p>
+"""},
+  "pt": {
+   "slug": "como-vender-fichas-de-cassino-online", "cat": "Fichas",
+   "title": "Como começar a vender fichas de cassino online como agente ou caixa",
+   "desc": "O que faz um agente ou caixa de cassino online, como começar a vender fichas passo a passo e os erros que mais custam vendas.",
+   "excerpt": "O modelo de agentes e caixas, passo a passo: escolher a plataforma, comprar fichas, atender seus jogadores e crescer sem depender de um único número.",
+   "wa": "Olá, li o artigo sobre como vender fichas [BLOG-FICHAS]. Quero começar como agente ou caixa.",
+   "body": """
+<p>Em boa parte da América Latina, o jogo online funciona com uma rede de <strong>agentes e caixas</strong>: pessoas que compram fichas da plataforma e as carregam para seus jogadores, que atendem pelo WhatsApp ou Telegram. É um modelo que permite começar sem desenvolver nada próprio. Estes são os passos para começar bem.</p>
+<h2>O que faz um caixa e o que faz um agente</h2>
+<ul>
+<li><strong>Caixa:</strong> cria usuários para seus jogadores, carrega fichas quando eles pagam e processa os saques.</li>
+<li><strong>Agente:</strong> além de atender jogadores, tem caixas ou subagentes sob sua responsabilidade e vende fichas para eles.</li>
+</ul>
+<p>Muitos começam como caixas e, quando a carteira cresce, passam a ser agentes.</p>
+<h2>1. Escolha a plataforma</h2>
+<p>Seus jogadores vão jogar onde você os carregar, então a plataforma é o seu produto. Verifique se ela tem jogos conhecidos, funciona bem no celular e tem um painel de agente fácil de usar. Na ProGaming Solutions trabalhamos com 11 plataformas prontas para operar e ajudamos você a escolher a que melhor combina com o seu público.</p>
+<h2>2. Compre suas primeiras fichas</h2>
+<p>Comece com um valor que você consiga movimentar em poucos dias: é melhor recarregar com frequência do que ter fichas paradas. Quanto maior o volume, melhor o preço por ficha. Conosco você pode pagar em <strong>pesos argentinos ou USDT</strong>, e as fichas são creditadas no seu usuário de agente.</p>
+<h2>3. Monte seu canal de atendimento</h2>
+<p>O atendimento rápido é o que faz o jogador voltar a carregar com você e não com outro. Tenha respostas prontas para as perguntas de sempre: como carregar, como sacar, quanto tempo demora. E não dependa de um único número: adicione um usuário de Telegram como reserva e, se puder, um chat dentro da plataforma.</p>
+<h2>4. Controle cada movimentação</h2>
+<p>Anote cada recarga e cada saque com data, jogador e valor. O painel de agente mostra o histórico, mas ter seu próprio registro evita discussões e mostra quais jogadores são os mais ativos.</p>
+<h2>5. Pague os saques rápido</h2>
+<p>Nada gera mais confiança do que um saque pago em dia. O jogador que recebe rápido recomenda seu caixa; o que espera vai embora e conta o motivo.</p>
+<h2>6. Cresça com subagentes e indicações</h2>
+<p>Quando sua operação estiver organizada, você pode adicionar caixas sob sua responsabilidade e oferecer um benefício aos jogadores que trouxerem amigos. Assim você cresce sem precisar atender cada conversa.</p>
+<h2>Erros que custam vendas</h2>
+<ul>
+<li>Trabalhar com um único número de WhatsApp: se ele for bloqueado, as recargas param.</li>
+<li>Ficar sem fichas no horário de maior movimento.</li>
+<li>Prometer ganhos aos jogadores: o jogo é entretenimento e ninguém pode garantir resultados.</li>
+<li>Não conferir as regras do seu país nem a maioridade: o jogo é apenas para maiores de 18 anos, e cada operador é responsável por cumprir a regulação do seu mercado.</li>
+</ul>
+<p>Se quiser começar, fale com a gente: mostramos as plataformas disponíveis, enviamos os preços e criamos seu usuário de agente.</p>
+"""},
+ },
  {
   "key": "casino", "cover": "casino", "date": "2026-10-29", "minutes": 5, "code": "BLOG-CASINO", "related_page": "Plataformas",
   "es": {
