@@ -45,16 +45,20 @@ META["pt"]["Privacidad"]=("Política de privacidade | ProGaming Solutions","Como
 for a in ARTICLES:
     PAGES["Blog-"+a["key"]]={l:"blog/"+a[l]["slug"]+"/" for l in LANGS}
     for l in LANGS: META[l]["Blog-"+a["key"]]=(a[l]["title"]+" | ProGaming Solutions", a[l]["desc"])
+# Página solo en portugués: Brasil (operadores autorizados)
+PAGES["Brasil"]={"pt":"brasil/"}
+META["pt"]["Brasil"]=("Plataforma e jogos para bets autorizadas no Brasil | ProGaming Solutions","Plataforma personalizada, API com mais de 2.000 jogos e integrações para operadores autorizados pela SPA/MF ou em processo de autorização. Suporte 24/7 em português.")
 for lang,(pre,hl,loc,suf) in LANGS.items():
     for b,subs in PAGES.items():
-        links[f"{b}{suf}.dc.html"]="/"+pre+subs[lang]
-urls=[D+LANGS[l][0]+subs[l] for subs in PAGES.values() for l in LANGS]
+        if lang in subs: links[f"{b}{suf}.dc.html"]="/"+pre+subs[lang]
+urls=[D+LANGS[l][0]+subs[l] for subs in PAGES.values() for l in LANGS if l in subs]
 sitemap='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'  <url><loc>{u}</loc></url>\n' for u in urls)+'</urlset>\n'
 for lang,(pre,hl,loc,suf) in LANGS.items():
     for b,subs in PAGES.items():
+        if lang not in subs: continue
         sub=subs[lang]
         title,desc=META[lang][b]
-        alts="\n".join(f'<link rel="alternate" hreflang="{LANGS[l][1]}" href="{D}{LANGS[l][0]}{subs[l]}">' for l in LANGS)+f'\n<link rel="alternate" hreflang="x-default" href="{D}{subs["es"]}">'
+        alts="\n".join(f'<link rel="alternate" hreflang="{LANGS[l][1]}" href="{D}{LANGS[l][0]}{subs[l]}">' for l in LANGS if l in subs)+(f'\n<link rel="alternate" hreflang="x-default" href="{D}{subs["es"]}">' if "es" in subs else "")
         ogimg=os.path.join(REPO,"src","assets","og-fichas.jpg") if b=="Fichas-Claro" else og
         ogn="og-fichas.jpg" if b=="Fichas-Claro" else "og-image.jpg"
         cfg=dict(meta_pixel="1573826721096411",google_ads="AW-18587060241",google_ads_conv="AW-18587060241/GdWRCNvVmb4dEJGQgJ9F",blobs=blobs,url=D+pre+sub,theme="#FFFFFF",assets_prefix="/assets/",site_root=R,links=links,appjs=f"app-{lang}-{b.lower()}.js",
