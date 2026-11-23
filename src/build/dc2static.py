@@ -68,6 +68,7 @@ head = f"""<meta charset="utf-8">
 {fonts}
 
 <!-- GOOGLE ANALYTICS: pega aquí el código que te da Google (empieza con <script async src="https://www.googletagmanager.com/gtag/js?id=G-...">) -->
+{('<!-- Google tag (gtag.js) -->\n<script async src="https://www.googletagmanager.com/gtag/js?id=' + c['google_ads'] + '"></script>\n<script>\nwindow.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag(\'js\', new Date());\ngtag(\'config\', \'' + c['google_ads'] + '\');\n</script>') if c.get('google_ads') else ''}
 {('<!-- Meta Pixel -->\n<script>\n!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version=\'2.0\';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,\'script\',\'https://connect.facebook.net/en_US/fbevents.js\');\nfbq(\'init\', \'' + c['meta_pixel'] + '\');\nfbq(\'track\', \'PageView\');\n</script>\n<!-- Fin Meta Pixel -->') if c.get('meta_pixel') else ''}
 
 <style>
@@ -101,6 +102,7 @@ document.addEventListener('click', function (e) {{
   if (!a) return;
   var lugar = (a.textContent || '').trim().slice(0, 60);
   if (window.gtag) gtag('event', 'click_whatsapp', {{ boton: lugar, pagina: location.hostname }});
+  if (window.gtag && {json.dumps(CFG.get('google_ads_conv', ''))}) gtag('event', 'conversion', {{ send_to: {json.dumps(CFG.get('google_ads_conv', ''))} }});
   if (window.fbq) fbq('track', 'Contact', {{ content_name: lugar }});
 }});
 """)

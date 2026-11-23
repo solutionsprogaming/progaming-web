@@ -57,7 +57,7 @@ for lang,(pre,hl,loc,suf) in LANGS.items():
         alts="\n".join(f'<link rel="alternate" hreflang="{LANGS[l][1]}" href="{D}{LANGS[l][0]}{subs[l]}">' for l in LANGS)+f'\n<link rel="alternate" hreflang="x-default" href="{D}{subs["es"]}">'
         ogimg=os.path.join(REPO,"src","assets","og-fichas.jpg") if b=="Fichas-Claro" else og
         ogn="og-fichas.jpg" if b=="Fichas-Claro" else "og-image.jpg"
-        cfg=dict(meta_pixel="1573826721096411",blobs=blobs,url=D+pre+sub,theme="#FFFFFF",assets_prefix="/assets/",site_root=R,links=links,appjs=f"app-{lang}-{b.lower()}.js",
+        cfg=dict(meta_pixel="1573826721096411",google_ads="AW-18587060241",google_ads_conv="",blobs=blobs,url=D+pre+sub,theme="#FFFFFF",assets_prefix="/assets/",site_root=R,links=links,appjs=f"app-{lang}-{b.lower()}.js",
                  root_files=(lang=="es" and sub==""),sitemap=sitemap,og_url=D+ogn,title=title,description=desc,og_title=title.split(" | ")[0],og_description=desc,
                  og_image=ogimg,og_name=ogn,lang=hl,locale=loc,head_extra=alts)
         json.dump(cfg,open('/tmp/pg-cfg.json','w'),ensure_ascii=False)
