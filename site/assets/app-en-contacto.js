@@ -176,6 +176,6 @@ document.addEventListener('click', function (e) {
   if (!a) return;
   var lugar = (a.textContent || '').trim().slice(0, 60);
   if (window.gtag) gtag('event', 'click_whatsapp', { boton: lugar, pagina: location.hostname });
-  if (window.gtag && "") gtag('event', 'conversion', { send_to: "" });
+  if (window.gtag && "AW-18587060241/GdWRCNvVmb4dEJGQgJ9F") gtag('event', 'conversion', { send_to: "AW-18587060241/GdWRCNvVmb4dEJGQgJ9F" });
   if (window.fbq) fbq('track', 'Contact', { content_name: lugar });
 });
